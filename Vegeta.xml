@@ -7,7 +7,7 @@
 <b:include data='blog' name='all-head-content'/>
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'/>
-<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css' rel='stylesheet'/>
+<link href='http://odpdci6wq.bkt.clouddn.com/vegeta/font-awesome.min-4.6.1.css' rel='stylesheet'/>
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <title><data:blog.pageTitle/></title> 
 <b:else/>
@@ -212,7 +212,7 @@ function createSummaryAndThumb(pID){
   <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1' visible='true'>
     <b:includable id='main' var='top'>
  <!--Intense Debate-->
-<script src='https://www.intensedebate.com/js/bloggerTemplateLinkWrapper.php?acct=6454545d286b388c9dcdb758d7866884'></script>
+<script src='https://www.intensedebate.com/js/bloggerTemplateLinkWrapper.php?acct=6454545d286b388c9dcdb758d7866884'/>
 <!--/Intense Debate-->
 
   <b:if cond='data:mobile == &quot;false&quot;'>
@@ -371,8 +371,8 @@ function createSummaryAndThumb(pID){
   <b:else/>
    
    <!--Intense Debate-->
-<div expr:id='"IDCommentPostInfoTitle"+data:post.id' style='display:none'><data:post.title/></div>
- <div style='display:none' expr:id='"IDCommentPostInfoTime"+data:post.id'><data:post.timestampISO8601/></div><div style='display:none' expr:id='"IDCommentPostInfoAuthor"+data:post.id'><data:post.author/></div><div style='display:none' expr:id='"IDCommentPostInfoCats"+data:post.id'><b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><data:label.name/>|</b:loop></b:if></div><a expr:href="data:post.url" expr:name="data:post.id" class="IDCommentsReplace">Comments</a>
+<div expr:id='&quot;IDCommentPostInfoTitle&quot;+data:post.id' style='display:none'><data:post.title/></div>
+ <div expr:id='&quot;IDCommentPostInfoTime&quot;+data:post.id' style='display:none'><data:post.timestampISO8601/></div><div expr:id='&quot;IDCommentPostInfoAuthor&quot;+data:post.id' style='display:none'><data:post.author/></div><div expr:id='&quot;IDCommentPostInfoCats&quot;+data:post.id' style='display:none'><b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><data:label.name/>|</b:loop></b:if></div><a class='IDCommentsReplace' expr:href='data:post.url' expr:name='data:post.id'>Comments</a>
 
 <!--/Intense Debate-->
 <!--Intense Debate-PRE ID <a class='comment-link' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>
@@ -389,7 +389,7 @@ function createSummaryAndThumb(pID){
       <b:include data='post' name='threaded_comments'/>
     <b:else/>
       
-   <!--Intense Debate--><div style='display:none' id='IDCommentInfoPostTitle'><data:post.title/></div><div style='display:none' id='IDCommentInfoPostTime'><data:post.timestampISO8601/></div><div style='display:none' id='IDCommentInfoPostAuthor'><data:post.author/></div><div style='display:none' id='IDCommentInfoPostCats'><b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><data:label.name/>|</b:loop></b:if></div>  <script type='text/javascript'>var idcomments_acct='6454545d286b388c9dcdb758d7866884'; var idcomments_post_id='<data:post.id/>'; var idcomments_post_url='<data:post.url/>'; var idcomments_post_title=document.getElementById('IDCommentInfoPostTitle').innerHTML;var idcomments_post_author=document.getElementById('IDCommentInfoPostAuthor').innerHTML;var idcomments_post_time=document.getElementById('IDCommentInfoPostTime').innerHTML;var idcomments_post_cats=document.getElementById('IDCommentInfoPostCats').innerHTML;var commentScriptWrapper = document.createElement(&#39;SCRIPT&#39;);commentScriptWrapper.type = &#39;text/javascript&#39;;commentScriptWrapper.src = &#39;https://www.intensedebate.com/js/bloggerTemplateCommentWrapper2.php?acct=&#39;+idcomments_acct+&#39;&amp;postid=&#39;+idcomments_post_id+&#39;&amp;title=&#39;+encodeURIComponent(idcomments_post_title)+&#39;&amp;url=&#39;+idcomments_post_url+&#39;&amp;posttime=&#39;+encodeURIComponent(idcomments_post_time)+&#39;&amp;postauthor=&#39;+encodeURIComponent(idcomments_post_author)+&#39;&amp;postcats=&#39;+encodeURIComponent(idcomments_post_cats);document.getElementsByTagName(&#39;HEAD&#39;)[0].appendChild(commentScriptWrapper);</script>
+   <!--Intense Debate--><div id='IDCommentInfoPostTitle' style='display:none'><data:post.title/></div><div id='IDCommentInfoPostTime' style='display:none'><data:post.timestampISO8601/></div><div id='IDCommentInfoPostAuthor' style='display:none'><data:post.author/></div><div id='IDCommentInfoPostCats' style='display:none'><b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'><data:label.name/>|</b:loop></b:if></div>  <script type='text/javascript'>var idcomments_acct=&#39;6454545d286b388c9dcdb758d7866884&#39;; var idcomments_post_id=&#39;<data:post.id/>&#39;; var idcomments_post_url=&#39;<data:post.url/>&#39;; var idcomments_post_title=document.getElementById(&#39;IDCommentInfoPostTitle&#39;).innerHTML;var idcomments_post_author=document.getElementById(&#39;IDCommentInfoPostAuthor&#39;).innerHTML;var idcomments_post_time=document.getElementById(&#39;IDCommentInfoPostTime&#39;).innerHTML;var idcomments_post_cats=document.getElementById(&#39;IDCommentInfoPostCats&#39;).innerHTML;var commentScriptWrapper = document.createElement(&#39;SCRIPT&#39;);commentScriptWrapper.type = &#39;text/javascript&#39;;commentScriptWrapper.src = &#39;https://www.intensedebate.com/js/bloggerTemplateCommentWrapper2.php?acct=&#39;+idcomments_acct+&#39;&amp;postid=&#39;+idcomments_post_id+&#39;&amp;title=&#39;+encodeURIComponent(idcomments_post_title)+&#39;&amp;url=&#39;+idcomments_post_url+&#39;&amp;posttime=&#39;+encodeURIComponent(idcomments_post_time)+&#39;&amp;postauthor=&#39;+encodeURIComponent(idcomments_post_author)+&#39;&amp;postcats=&#39;+encodeURIComponent(idcomments_post_cats);document.getElementsByTagName(&#39;HEAD&#39;)[0].appendChild(commentScriptWrapper);</script>
 <!--/Intense Debate-->
  <!--Intense Debate-PRE ID <b:include data='post' name='comments'/> -->
 
