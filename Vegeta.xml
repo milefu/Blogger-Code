@@ -7,14 +7,14 @@
 <b:include data='blog' name='all-head-content'/>
 <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'/>
-<link href='http://odpdci6wq.bkt.clouddn.com/vegeta/font-awesome.min-4.6.1.css' rel='stylesheet'/>
+<link href='//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <title><data:blog.pageTitle/></title> 
 <b:else/>
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
 <title><data:blog.pageName/> ~ <data:blog.title/></title>
 <b:else/>
-<title>404 ~ 你找的页面被偷走了！</title>
+<title>404 ~ 你找的页面被偷走了!</title>
 </b:if>
 </b:if>
 <!--[if lt IE 9]>
@@ -103,7 +103,7 @@ function createSummaryAndThumb(pID){
 
 <div class='site-brandingnbt'>
 <b:section class='siteheadersec' id='siteheadersec' maxwidgets='1' showaddelement='no'>
-<!-- 网站标题「 -->
+<!-- 网站标题[ -->
   <b:widget id='Header1' locked='true' title='法律派  (标题)' type='Header' version='1' visible='true'>
     <b:includable id='main'>
   <b:if cond='data:useImage'>
@@ -144,18 +144,14 @@ function createSummaryAndThumb(pID){
     </div>
   </b:if>
 </b:includable>
-<!-- 网站描述「 -->
     <b:includable id='description'>
     <h2 class='site-descriptionnbt'><data:description/></h2>
 </b:includable>
-<!-- 网站描述」 -->
-<!-- 网站名称「 -->
     <b:includable id='title'>
 <a expr:href='data:blog.homepageUrl'><data:title/></a>
 </b:includable>
-<!-- 网站名称」 -->
   </b:widget>
-  <!-- 网站标题」 -->
+    <!-- 网站标题] -->
 </b:section>
 </div><!-- .site-branding -->
 
@@ -168,32 +164,31 @@ function createSummaryAndThumb(pID){
 
 <li><a href='http://www.lawpai.com/p/blog-page.html'>关于律师</a>
 <ul class='sub-menu'>
-<li><a href='#'>山都律所</a></li>
+<li><a href='http://www.lawpai.com/p/blog-page_10.html'>法律委托</a></li>
+<li><a href='http://www.lawpai.com/2016/10/2016.html'>律师费用</a></li>
 </ul>
 </li>
 
-<li><a href='http://www.lawpai.com/p/blog-page_10.html'>法律委托</a>
+<li><a href='http://www.lawpai.com/search/label/%E5%BE%8B%E5%B8%88%E6%96%87%E9%9B%86'>律师文集</a>
 <ul class='sub-menu'>
-<li><a href='#'>律师费用</a></li>
-<li><a href='#'>未分类</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E5%8A%9E%E6%A1%88%E6%89%8B%E8%AE%B0'>办案手记</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E6%B0%91%E5%95%86%E8%A1%8C%E6%94%BF'>民商行政</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E5%88%91%E4%BA%8B%E7%8A%AF%E7%BD%AA'>刑事犯罪</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E8%AF%81%E5%88%B8%E9%9D%9E%E8%AF%89'>证券非诉</a></li>
 </ul>
 </li>
 
-<li><a href='#'>未分类</a>
+<li><a href='http://www.lawpai.com/search/label/%E6%9D%82%E6%96%87%E9%9A%8F%E7%AC%94'>杂文随笔</a>
 <ul class='sub-menu'>
-<li><a href='#'>Child Category 1</a>
-<ul class='sub-menu'>
-<li><a href='#'>Sub Child Category 1</a></li>
-</ul>
-</li>
-<li><a href='#'>Child Category 2</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E4%B9%A6%E7%B1%8D%E5%BD%B1%E8%A7%86'> 书籍影视</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E5%AE%97%E6%95%99%E4%BF%AE%E5%85%BB'> 宗教修养</a></li>
+<li><a href='http://www.lawpai.com/search/label/%E5%8D%9A%E5%AE%A2%E6%B2%BF%E9%9D%A9'> 博客沿革</a></li>
 </ul>
 </li>
 
-<li><a href='http://www.lawpai.com/2016/10/guestbook.html'>留言板</a></li>
-
-<li><a href='http://www.lawpai.com/p/blog-page_4.html'>日期归档</a>
+<li><a href='http://www.lawpai.com/2016/10/guestbook.html'>留言板</a>
 <ul class='sub-menu'>
+<li><a href='http://www.lawpai.com/p/blog-page_4.html'>日期归档</a></li>
 <li><a href='http://www.lawpai.com/p/blog-page_65.html'>分类归档</a></li>
 </ul>
 </li>
@@ -213,9 +208,8 @@ function createSummaryAndThumb(pID){
 <div class='content-areanbt' id='primarynbt'>
 <div class='site-mainnbt' id='mainnbt'>
 <b:section class='sitecontentarea' id='sitecontentarea' showaddelement='no'>
-<!-- 文章及留言区「 -->
   <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1' visible='true'>
-  <!-- 主程式区“一般不动”「 -->
+    <!-- 主程式区“一般不动”[ -->
     <b:includable id='main' var='top'>
   <b:if cond='data:mobile == &quot;false&quot;'>
 
@@ -296,7 +290,7 @@ function createSummaryAndThumb(pID){
     <data:top.dummyBootstrap/>
   </b:if>
 </b:includable>
-<!-- 主程式区“一般不动”」 -->
+<!-- 主程式区“一般不动”] -->
     <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
     <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
@@ -388,7 +382,7 @@ function createSummaryAndThumb(pID){
     </b:if>
   </b:if>
 </b:includable>
-<!-- 旧范本留言区「 -->
+<!-- 旧范本留言区[-->
     <b:includable id='comments' var='post'>
   <div class='comments' id='comments'>
     <a name='comments'/>
@@ -505,7 +499,7 @@ function createSummaryAndThumb(pID){
     </div>
   </div>
 </b:includable>
-<!-- 旧范本留言区」 -->
+<!-- 旧范本留言区]-->
     <b:includable id='feedLinks'>
   <b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
     <b:if cond='data:feedLinks'>
@@ -526,7 +520,7 @@ function createSummaryAndThumb(pID){
     </div>
   </b:if>
 </b:includable>
-<!-- 订阅区「 -->
+<!-- 订阅区[ -->
     <b:includable id='feedLinksBody' var='links'>
   <div class='feed-links'>
   <data:feedLinksMsg/>
@@ -535,9 +529,8 @@ function createSummaryAndThumb(pID){
   </b:loop>
   </div>
 </b:includable>
-<!-- 订阅区」 -->
+<!-- 订阅区] -->
     <b:includable id='iframe_comments' var='post'>
-
   <b:if cond='data:post.allowComments'>
     <script expr:src='data:post.commentSrc' type='text/javascript'/>
     <div class='cmt_iframe_holder'/>
@@ -646,7 +639,7 @@ function createSummaryAndThumb(pID){
 
         <div class='post hentry uncustomized-post-template'>
           <a expr:name='data:post.id'/>
-		  <!-- 文章标题「 -->
+		  <!-- 文章标题[ -->
           <b:if cond='data:post.title'>
             <h3 class='post-title entry-title'>
               <b:if cond='data:post.link'>
@@ -664,7 +657,7 @@ function createSummaryAndThumb(pID){
               </b:if>
             </h3>
           </b:if>
-          <!-- 文章标题」 -->
+          <!-- 文章标题] -->
           <div class='post-header'>
             <div class='post-header-line-1'/>
           </div>
@@ -676,7 +669,7 @@ function createSummaryAndThumb(pID){
 
           <div class='post-footer'>
             <div class='post-footer-line post-footer-line-1'>
-			<!-- 文章作者资讯「 -->
+			<!-- 文章作者资讯[-->
               <span class='post-author vcard'>
                 <b:if cond='data:top.showAuthor'>
                   <b:if cond='data:post.authorProfileUrl'>
@@ -690,8 +683,8 @@ function createSummaryAndThumb(pID){
                   </b:if>
                 </b:if>
               </span>
-            <!-- 文章作者咨询」 -->
-			<!-- 发文时间「 -->
+            <!-- 文章作者咨询] -->
+			<!-- 发文时间[ -->
               <span class='post-timestamp'>
                 <b:if cond='data:top.showTimestamp'>
                   <data:top.timestampLabel/>
@@ -700,8 +693,8 @@ function createSummaryAndThumb(pID){
                   </b:if>
                 </b:if>
               </span>
-            <!-- 发文时间」 -->
-			<!-- 留言数量「 -->
+            <!-- 发文时间] -->
+			<!-- 留言数量[ -->
               <span class='post-comment-link'>
                 <b:if cond='data:blog.pageType != &quot;item&quot;'>
                   <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
@@ -711,7 +704,7 @@ function createSummaryAndThumb(pID){
                   </b:if>
                 </b:if>
               </span>
-			<!-- 留言数量」 -->
+			<!-- 留言数量] -->
             </div>
 
             <div class='post-footer-line post-footer-line-2'>
@@ -738,7 +731,7 @@ function createSummaryAndThumb(pID){
     </div>
   </div>
 </b:includable>
-<!-- 上下页区「 -->
+<!-- 上下页区[ -->
     <b:includable id='nextprev'>
   <div class='blog-pager' id='blog-pager'>
     <b:if cond='data:newerPageUrl'>
@@ -764,8 +757,8 @@ function createSummaryAndThumb(pID){
   </div>
   <div class='clear'/>
 </b:includable>
-<!-- 上下页区」 -->
-<!-- 文章区域「 -->
+<!-- 上下页区]-->
+<!-- 文章区域[-->
     <b:includable id='post' var='post'>
 <article class='post hentry'>
 <b:if cond='data:post.firstImageUrl'>
@@ -811,7 +804,7 @@ function createSummaryAndThumb(pID){
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'><data:post.body/></b:if>
 
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-<!--该处：文章尾部自带分享按钮-->
+<!--该处文章尾部自带分享按钮-->
 </b:if>
 
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
@@ -828,7 +821,7 @@ function createSummaryAndThumb(pID){
 <b:if cond='data:blog.pageType == &quot;item&quot;'>	  
 <div class='post-iconspbt'>
 <span class='post-icons' style='padding-right:10px;'>
-<!-- email图标「 -->
+<!-- email图标[ -->
 <b:if cond='data:post.emailPostUrl'>
   <span class='item-action'>
   <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
@@ -836,7 +829,7 @@ function createSummaryAndThumb(pID){
   </a>
   </span>
 </b:if>
-<!-- email图标」 -->
+<!-- email图标] -->
 </span>
 <!-- 百度分享开始 -->
 <div class='bdsharebuttonbox'><a class='bds_more' data-cmd='more' href='#'>分享到&#65306;</a><a class='bds_qzone' data-cmd='qzone' href='#' title='分享到QQ空间'>QQ空间</a><a class='bds_tsina' data-cmd='tsina' href='#' title='分享到新浪微博'>新浪微博</a><a class='bds_tqq' data-cmd='tqq' href='#' title='分享到腾讯微博'>腾讯微博</a><a class='bds_renren' data-cmd='renren' href='#' title='分享到人人网'>人人网</a><a class='bds_weixin' data-cmd='weixin' href='#' title='分享到微信'>微信</a></div>
@@ -909,21 +902,17 @@ callBack: function() {}
 
 /*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
 var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Artikel Terkait:</h4>",widgetStyle:1,homePage:"http://www.dte.web.id",numbrelatedPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:72,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numbrelatedPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numbrelatedPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numbrelatedPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail" in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/\/s[0-9]+(\-c)?/,"/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary" in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+">"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
-
 //]]>
 </script>
 </b:if>
-
 </article>
 <div style='clear: both;'/>
-
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <!-- navigation -->
 <b:include name='nextprev'/>
 </b:if>
-
 </b:includable>
-<!-- 文章区域」 -->
+<!-- 文章区域]-->
     <b:includable id='postQuickEdit' var='post'>
   <b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
@@ -933,12 +922,10 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     </span>
   </b:if>
 </b:includable>
-<!-- 分享按钮「 -->
     <b:includable id='shareButtons' var='post'>
   <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
 </b:includable>
-<!-- 分享按钮」 -->
-<!-- 标签讯息：“显示具有##标签的文章”「 -->
+<!-- 标签讯息：“显示具有##标签的文章”[ -->
     <b:includable id='status-message'>
   <b:if cond='data:navMessage'>
   <div class='status-msg-wrap'>
@@ -954,7 +941,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   <div style='clear: both;'/>
   </b:if>
 </b:includable>
-<!-- 标签讯息：“显示具有##标签的文章”」 -->
+<!-- 标签讯息：“显示具有##标签的文章”] -->
     <b:includable id='threaded-comment-form' var='post'>
   <div class='comment-form'>
     <a name='comment-form'/>
@@ -1155,7 +1142,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 // ]]>
   </script>
 </b:includable>
-<!-- 串联式留言区「 -->
+<!-- 串联式留言区[ -->
     <b:includable id='threaded_comments' var='post'>
   <div class='comments' id='comments'>
     <a name='comments'/>
@@ -1194,9 +1181,8 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     </div>
   </div>
 </b:includable>
-<!-- 串联式留言区」 -->
+<!-- 串联式留言区]-->
   </b:widget>
-  <!-- 文章及留言区」 -->
 </b:section>
 </div><!-- #main -->
 </div><!-- #primary -->
@@ -1224,7 +1210,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </div>
  -->
 <b:section class='sidebarwidgetsarea' id='sidebarwidgetsarea' preferred='yes'>
-  <b:widget id='Text2' locked='false' title='文本区域' type='Text' version='1' visible='true'>
+  <b:widget id='Text2' locked='false' title='联系方式' type='Text' version='1' visible='true'>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
@@ -1236,7 +1222,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <!--   <b:include name='quickedit'/> -->
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='文章分类' type='Label' visible='true'>
+  <b:widget id='Label1' locked='false' title='文章分类' type='Label' version='1' visible='true'>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
     <h2><data:title/></h2>
@@ -1275,7 +1261,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 </b:includable>
   </b:widget>
-
   <b:widget id='PopularPosts1' locked='false' title='热门文章' type='PopularPosts' version='1' visible='true'>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
@@ -1316,7 +1301,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='LinkList1' locked='false' title='专题文章' type='LinkList' visible='true'>
+  <b:widget id='LinkList1' locked='false' title='专题文章' type='LinkList' version='1' visible='true'>
     <b:includable id='main'>
 
 <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
@@ -1330,7 +1315,20 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
  </div>
 </b:includable>
   </b:widget>
-  <b:widget id='BlogList1' locked='false' title='其它博客列表' type='BlogList' visible='true'>
+  <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' visible='true'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+  <b:include name='quickedit'/>
+</b:includable>
+  </b:widget>
+  <b:widget id='BlogList1' locked='false' title='其它博客列表' type='BlogList' version='1' visible='true'>
     <b:includable id='main'>
     <!-- only display title if it's non-empty -->
     <b:if cond='data:title != &quot;&quot;'>
@@ -1427,7 +1425,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <div class='containernbt'>
 <div class='copyright-textnbt'>
 <!-- Do not edit or remove credits without our permission: newbloggerthemes.com -->
-Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://vegeta-nbt.blogspot.com/' target='_blank'>Vegeta blogger</a> | 本博客开源： <a href='https://github.com/fuyuanlin/Blogger-Vegeta-Theme' target='_blank' title='Blogger-Vegeta-Theme-Github'>Vegeta github</a>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://vegeta-nbt.blogspot.com/' target='_blank'>Vegeta blogger</a> | 本博客开源: <a href='https://github.com/fuyuanlin/Blogger-Vegeta-Theme' target='_blank' title='Blogger-Vegeta-Theme-Github'>Vegeta github</a>
 </div>
 <div class='back-topnbt'>
 <a href='#' id='back-to-topnbt' title='Back to top'>Back To Top <i class='fa fa-arrow-circle-o-up'/></a>
