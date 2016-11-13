@@ -18,12 +18,13 @@
 </b:if>
 </b:if>
 <!--[if lt IE 9]>
-<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
 <![endif]-->
 
 &lt;style type=&quot;text/css&quot;&gt;
-&lt;!-- /*<b:skin><![CDATA[/*]]></b:skin>
-<link href='http://odpdci6wq.bkt.clouddn.com/vegeta/style.css' rel='stylesheet' type='text/css'/>
+&lt;!-- /*<b:skin><![CDATA[/*<meta name="baidu-site-verification" content="iylWEeYTmV" />]]></b:skin>
+<link href='http://odpdci6wq.bkt.clouddn.com/vegeta/style-normalize.css' rel='stylesheet' type='text/css'/>
+
 <script src='http://odpdci6wq.bkt.clouddn.com/vegeta/jquery.min-v1.12.2.js' type='text/javascript'/>
 <script src='http://odpdci6wq.bkt.clouddn.com/vegeta/jquery.migrate-v1.4.0.js' type='text/javascript'/>
 
@@ -103,7 +104,6 @@ function createSummaryAndThumb(pID){
 
 <div class='site-brandingnbt'>
 <b:section class='siteheadersec' id='siteheadersec' maxwidgets='1' showaddelement='no'>
-<!-- 网站标题[ -->
   <b:widget id='Header1' locked='true' title='法律派  (标题)' type='Header' version='1' visible='true'>
     <b:includable id='main'>
   <b:if cond='data:useImage'>
@@ -151,7 +151,6 @@ function createSummaryAndThumb(pID){
 <a expr:href='data:blog.homepageUrl'><data:title/></a>
 </b:includable>
   </b:widget>
-    <!-- 网站标题] -->
 </b:section>
 </div><!-- .site-branding -->
 
@@ -166,6 +165,7 @@ function createSummaryAndThumb(pID){
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/p/blog-page_10.html'>法律委托</a></li>
 <li><a href='http://www.lawpai.com/2016/10/2016.html'>律师费用</a></li>
+<li><a href='http://www.lawpai.com/p/blog-page_20.html'>日程表</a></li>
 </ul>
 </li>
 
@@ -209,7 +209,6 @@ function createSummaryAndThumb(pID){
 <div class='site-mainnbt' id='mainnbt'>
 <b:section class='sitecontentarea' id='sitecontentarea' showaddelement='no'>
   <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1' visible='true'>
-    <!-- 主程式区“一般不动”[ -->
     <b:includable id='main' var='top'>
   <b:if cond='data:mobile == &quot;false&quot;'>
 
@@ -290,7 +289,6 @@ function createSummaryAndThumb(pID){
     <data:top.dummyBootstrap/>
   </b:if>
 </b:includable>
-<!-- 主程式区“一般不动”] -->
     <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
     <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
@@ -382,7 +380,6 @@ function createSummaryAndThumb(pID){
     </b:if>
   </b:if>
 </b:includable>
-<!-- 旧范本留言区[-->
     <b:includable id='comments' var='post'>
   <div class='comments' id='comments'>
     <a name='comments'/>
@@ -499,7 +496,6 @@ function createSummaryAndThumb(pID){
     </div>
   </div>
 </b:includable>
-<!-- 旧范本留言区]-->
     <b:includable id='feedLinks'>
   <b:if cond='data:blog.pageType != &quot;item&quot;'> <!-- Blog feed links -->
     <b:if cond='data:feedLinks'>
@@ -520,7 +516,6 @@ function createSummaryAndThumb(pID){
     </div>
   </b:if>
 </b:includable>
-<!-- 订阅区[ -->
     <b:includable id='feedLinksBody' var='links'>
   <div class='feed-links'>
   <data:feedLinksMsg/>
@@ -529,7 +524,6 @@ function createSummaryAndThumb(pID){
   </b:loop>
   </div>
 </b:includable>
-<!-- 订阅区] -->
     <b:includable id='iframe_comments' var='post'>
   <b:if cond='data:post.allowComments'>
     <script expr:src='data:post.commentSrc' type='text/javascript'/>
@@ -731,7 +725,6 @@ function createSummaryAndThumb(pID){
     </div>
   </div>
 </b:includable>
-<!-- 上下页区[ -->
     <b:includable id='nextprev'>
   <div class='blog-pager' id='blog-pager'>
     <b:if cond='data:newerPageUrl'>
@@ -757,8 +750,6 @@ function createSummaryAndThumb(pID){
   </div>
   <div class='clear'/>
 </b:includable>
-<!-- 上下页区]-->
-<!-- 文章区域[-->
     <b:includable id='post' var='post'>
 <article class='post hentry'>
 <b:if cond='data:post.firstImageUrl'>
@@ -912,7 +903,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <b:include name='nextprev'/>
 </b:if>
 </b:includable>
-<!-- 文章区域]-->
     <b:includable id='postQuickEdit' var='post'>
   <b:if cond='data:post.editUrl'>
     <span expr:class='&quot;item-control &quot; + data:post.adminClass'>
@@ -925,7 +915,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     <b:includable id='shareButtons' var='post'>
   <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showOrkutButton'><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
 </b:includable>
-<!-- 标签讯息：“显示具有##标签的文章”[ -->
     <b:includable id='status-message'>
   <b:if cond='data:navMessage'>
   <div class='status-msg-wrap'>
@@ -941,7 +930,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   <div style='clear: both;'/>
   </b:if>
 </b:includable>
-<!-- 标签讯息：“显示具有##标签的文章”] -->
     <b:includable id='threaded-comment-form' var='post'>
   <div class='comment-form'>
     <a name='comment-form'/>
@@ -1142,7 +1130,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 // ]]>
   </script>
 </b:includable>
-<!-- 串联式留言区[ -->
     <b:includable id='threaded_comments' var='post'>
   <div class='comments' id='comments'>
     <a name='comments'/>
@@ -1181,7 +1168,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     </div>
   </div>
 </b:includable>
-<!-- 串联式留言区]-->
   </b:widget>
 </b:section>
 </div><!-- #main -->
@@ -1210,6 +1196,19 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </div>
  -->
 <b:section class='sidebarwidgetsarea' id='sidebarwidgetsarea' preferred='yes'>
+  <b:widget id='HTML3' locked='false' title='百度站内搜索' type='HTML' visible='true'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+<!--   <b:include name='quickedit'/> -->
+</b:includable>
+  </b:widget>
   <b:widget id='Text2' locked='false' title='联系方式' type='Text' version='1' visible='true'>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1315,6 +1314,19 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
  </div>
 </b:includable>
   </b:widget>
+  <b:widget id='HTML2' locked='false' title='我的微博' type='HTML' visible='true'>
+    <b:includable id='main'>
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:title != &quot;&quot;'>
+    <h2 class='title'><data:title/></h2>
+  </b:if>
+  <div class='widget-content'>
+    <data:content/>
+  </div>
+
+<!--   <b:include name='quickedit'/> -->
+</b:includable>
+  </b:widget>
   <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' visible='true'>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1325,7 +1337,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     <data:content/>
   </div>
 
-  <b:include name='quickedit'/>
+<!--   <b:include name='quickedit'/> -->
 </b:includable>
   </b:widget>
   <b:widget id='BlogList1' locked='false' title='其它博客列表' type='BlogList' version='1' visible='true'>
