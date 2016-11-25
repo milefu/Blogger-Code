@@ -5,11 +5,10 @@
 <meta charset='UTF-8'/>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
 <b:include data='blog' name='all-head-content'/>
-<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'/>
 <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'/>
 <link href='//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
-<title><data:blog.pageTitle/></title> 
+<title><data:blog.pageTitle/></title>
 <b:else/>
 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
 <title><data:blog.pageName/> ~ <data:blog.title/></title>
@@ -20,67 +19,69 @@
 <!--[if lt IE 9]>
     <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
 <![endif]-->
-
 &lt;style type=&quot;text/css&quot;&gt;
 &lt;!-- /*<b:skin><![CDATA[/*<meta name="baidu-site-verification" content="iylWEeYTmV" />]]></b:skin>
 <link href='http://odpdci6wq.bkt.clouddn.com/vegeta/style-normalize.css' rel='stylesheet' type='text/css'/>
-
-<script src='http://odpdci6wq.bkt.clouddn.com/vegeta/jquery.min-v1.12.2.js' type='text/javascript'/>
-<script src='http://odpdci6wq.bkt.clouddn.com/vegeta/jquery.migrate-v1.4.0.js' type='text/javascript'/>
-
+<link href='//cdn.bootcss.com/sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css' rel='stylesheet' type='text/css'/>
+<script src='//cdn.bootcss.com/jquery/3.1.1/jquery.min.js' type='text/javascript'/>
 <script type='text/javascript'>
 //<![CDATA[
-
 function showrecentcomments(json){for(var i=0;i<a_rc;i++){var b_rc=json.feed.entry[i];var c_rc;if(i==json.feed.entry.length)break;for(var k=0;k<b_rc.link.length;k++){if(b_rc.link[k].rel=='alternate'){c_rc=b_rc.link[k].href;break;}}c_rc=c_rc.replace("#","#comment-");var d_rc=c_rc.split("#");d_rc=d_rc[0];var e_rc=d_rc.split("/");e_rc=e_rc[5];e_rc=e_rc.split(".html");e_rc=e_rc[0];var f_rc=e_rc.replace(/-/g," ");f_rc=f_rc.link(d_rc);var g_rc=b_rc.published.$t;var h_rc=g_rc.substring(0,4);var i_rc=g_rc.substring(5,7);var j_rc=g_rc.substring(8,10);var k_rc=new Array();k_rc[1]="Jan";k_rc[2]="Feb";k_rc[3]="Mar";k_rc[4]="Apr";k_rc[5]="May";k_rc[6]="Jun";k_rc[7]="Jul";k_rc[8]="Aug";k_rc[9]="Sep";k_rc[10]="Oct";k_rc[11]="Nov";k_rc[12]="Dec";if("content" in b_rc){var l_rc=b_rc.content.$t;}else if("summary" in b_rc){var l_rc=b_rc.summary.$t;}else var l_rc="";var re=/<\S[^>]*>/g;l_rc=l_rc.replace(re,"");if(m_rc==true)document.write('On '+k_rc[parseInt(i_rc,10)]+' '+j_rc+' ');document.write('<a href="'+c_rc+'">'+b_rc.author[0].name.$t+'</a> commented');if(n_rc==true)document.write(' on '+f_rc);document.write(': ');if(l_rc.length<o_rc){document.write('<i>&#8220;');document.write(l_rc);document.write('&#8221;</i><br/><br/>');}else{document.write('<i>&#8220;');l_rc=l_rc.substring(0,o_rc);var p_rc=l_rc.lastIndexOf(" ");l_rc=l_rc.substring(0,p_rc);document.write(l_rc+'&hellip;&#8221;</i>');document.write('<br/><br/>');}}}
-
 function rp(json){document.write('<ul>');for(var i=0;i<numposts;i++){document.write('<li>');var entry=json.feed.entry[i];var posttitle=entry.title.$t;var posturl;if(i==json.feed.entry.length)break;for(var k=0;k<entry.link.length;k++){if(entry.link[k].rel=='alternate'){posturl=entry.link[k].href;break}}posttitle=posttitle.link(posturl);var readmorelink="(more)";readmorelink=readmorelink.link(posturl);var postdate=entry.published.$t;var cdyear=postdate.substring(0,4);var cdmonth=postdate.substring(5,7);var cdday=postdate.substring(8,10);var monthnames=new Array();monthnames[1]="Jan";monthnames[2]="Feb";monthnames[3]="Mar";monthnames[4]="Apr";monthnames[5]="May";monthnames[6]="Jun";monthnames[7]="Jul";monthnames[8]="Aug";monthnames[9]="Sep";monthnames[10]="Oct";monthnames[11]="Nov";monthnames[12]="Dec";if("content"in entry){var postcontent=entry.content.$t}else if("summary"in entry){var postcontent=entry.summary.$t}else var postcontent="";var re=/<\S[^>]*>/g;postcontent=postcontent.replace(re,"");document.write(posttitle);if(showpostdate==true)document.write(' - '+monthnames[parseInt(cdmonth,10)]+' '+cdday);if(showpostsummary==true){if(postcontent.length<numchars){document.write(postcontent)}else{postcontent=postcontent.substring(0,numchars);var quoteEnd=postcontent.lastIndexOf(" ");postcontent=postcontent.substring(0,quoteEnd);document.write(postcontent+'...'+readmorelink)}}document.write('</li>')}document.write('</ul>')}
-
 //]]>
 </script>
-
+<script>
+(function(){
+    var bp = document.createElement(&#39;script&#39;);
+    var curProtocol = window.location.protocol.split(&#39;:&#39;)[0];
+    if (curProtocol === &#39;https&#39;) {
+        bp.src = &#39;https://zz.bdstatic.com/linksubmit/push.js&#39;;
+    }
+    else {
+        bp.src = &#39;http://push.zhanzhang.baidu.com/push.js&#39;;
+    }
+    var s = document.getElementsByTagName(&quot;script&quot;)[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 <script type='text/javascript'>
 summary_noimg = 100;
 summary_img = 100;
 img_thumb_height = 100;
-img_thumb_width = 100; 
+img_thumb_width = 100;
 </script>
 <script type='text/javascript'>
 //<![CDATA[
-
-function removeHtmlTag(strx,chop){ 
+function removeHtmlTag(strx,chop){
 	if(strx.indexOf("<")!=-1)
 	{
-		var s = strx.split("<"); 
-		for(var i=0;i<s.length;i++){ 
-			if(s[i].indexOf(">")!=-1){ 
-				s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length); 
-			} 
-		} 
-		strx =  s.join(""); 
+		var s = strx.split("<");
+		for(var i=0;i<s.length;i++){
+			if(s[i].indexOf(">")!=-1){
+				s[i] = s[i].substring(s[i].indexOf(">")+1,s[i].length);
+			}
+		}
+		strx =  s.join("");
 	}
-	chop = (chop < strx.length-1) ? chop : strx.length-2; 
-	while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++; 
-	strx = strx.substring(0,chop-1); 
-	return strx+'...'; 
+	chop = (chop < strx.length-1) ? chop : strx.length-2;
+	while(strx.charAt(chop-1)!=' ' && strx.indexOf(' ',chop)!=-1) chop++;
+	strx = strx.substring(0,chop-1);
+	return strx+'...';
 }
-
 function createSummaryAndThumb(pID){
 	var div = document.getElementById(pID);
 	var imgtag = "";
 	var img = div.getElementsByTagName("img");
 	var summ = summary_noimg;
-	if(img.length>=1) {	
+	if(img.length>=1) {
 		imgtag = '<img src="'+img[0].src+'" class="pbtthumbimg"/>';
 		summ = summary_img;
 	}
-	
 	var summary = imgtag + '<div>' + removeHtmlTag(div.innerHTML,summ) + '</div>';
 	div.innerHTML = summary;
 }
-
 //]]>
 </script>
-
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
 <style type='text/css'>
 .pbtsharethisbutt {float:none;}
@@ -91,17 +92,12 @@ function createSummaryAndThumb(pID){
 .pbtsharethisbutt {float:none;}
 </style>
 </b:if>
-
 <b:include data='blog' name='google-analytics'/>
-
 </head>
-
 <body>
 <div class='sitenbt' id='pagenbt'>
-
 <header class='site-headernbt' id='mastheadnbt'>
 <div class='header-innernbt'>
-
 <div class='site-brandingnbt'>
 <b:section class='siteheadersec' id='siteheadersec' maxwidgets='1' showaddelement='no'>
   <b:widget id='Header1' locked='true' title='法律派  (标题)' type='Header' version='1' visible='true'>
@@ -153,14 +149,11 @@ function createSummaryAndThumb(pID){
   </b:widget>
 </b:section>
 </div><!-- .site-branding -->
-
 <div id='respo-navigationnbt'>
 <nav class='main-navigationnbt' id='site-navigationnbt'>
 <div class='menu-nbt-menu-container'>
 <ul class='menunbt' id='primary-menunbt'>
-
 <li><a expr:href='data:blog.homepageUrl'>主页</a></li>
-
 <li><a href='http://www.lawpai.com/p/blog-page.html'>关于律师</a>
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/p/blog-page_10.html'>法律委托</a></li>
@@ -168,7 +161,6 @@ function createSummaryAndThumb(pID){
 <li><a href='http://www.lawpai.com/p/blog-page_20.html'>日程表</a></li>
 </ul>
 </li>
-
 <li><a href='http://www.lawpai.com/search/label/%E5%BE%8B%E5%B8%88%E6%96%87%E9%9B%86'>律师文集</a>
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/search/label/%E5%8A%9E%E6%A1%88%E6%89%8B%E8%AE%B0'>办案手记</a></li>
@@ -177,7 +169,6 @@ function createSummaryAndThumb(pID){
 <li><a href='http://www.lawpai.com/search/label/%E8%AF%81%E5%88%B8%E9%9D%9E%E8%AF%89'>证券非诉</a></li>
 </ul>
 </li>
-
 <li><a href='http://www.lawpai.com/search/label/%E6%9D%82%E6%96%87%E9%9A%8F%E7%AC%94'>杂文随笔</a>
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/search/label/%E4%B9%A6%E7%B1%8D%E5%BD%B1%E8%A7%86'> 书籍影视</a></li>
@@ -185,25 +176,21 @@ function createSummaryAndThumb(pID){
 <li><a href='http://www.lawpai.com/search/label/%E5%8D%9A%E5%AE%A2%E6%B2%BF%E9%9D%A9'> 博客沿革</a></li>
 </ul>
 </li>
-
 <li><a href='http://www.lawpai.com/2016/10/guestbook.html'>留言板</a>
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/p/blog-page_4.html'>日期归档</a></li>
 <li><a href='http://www.lawpai.com/p/blog-page_65.html'>分类归档</a></li>
 </ul>
 </li>
-
 </ul>
 </div>
 </nav><!-- #site-navigation -->
 </div>
-
 <div id='mobile-headernbt'>
     <a href='#sidr-main' id='responsive-menu-buttonnbt'><i class='fa fa-bars'/></a>
 </div>
-</div>	
+</div>
 </header><!-- #masthead -->
-
 <div class='site-contentnbt' id='contentnbt'>
 <div class='content-areanbt' id='primarynbt'>
 <div class='site-mainnbt' id='mainnbt'>
@@ -211,12 +198,9 @@ function createSummaryAndThumb(pID){
   <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1' visible='true'>
     <b:includable id='main' var='top'>
   <b:if cond='data:mobile == &quot;false&quot;'>
-
     <!-- posts -->
     <div class='blog-posts hfeed'>
-
       <b:include data='top' name='status-message'/>
-
       <data:defaultAdStart/>
       <b:loop values='data:posts' var='post'>
         <b:if cond='data:post.isDateStart'>
@@ -259,15 +243,12 @@ function createSummaryAndThumb(pID){
       </b:if>
       <data:adEnd/>
     </div>
-
 <div style='clear: both;'/>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <!-- navigation -->
 <b:include name='nextprev'/>
 </b:if>
-
     <!-- feed links -->
-
     <b:if cond='data:top.showStars'>
       <script src='//www.google.com/jsapi' type='text/javascript'/>
       <script type='text/javascript'>
@@ -280,11 +261,9 @@ function createSummaryAndThumb(pID){
         google.setOnLoadCallback(initialize);
       </script>
     </b:if>
-
   <b:else/>
     <b:include name='mobile-main'/>
   </b:if>
-
   <b:if cond='data:top.showDummy'>
     <data:top.dummyBootstrap/>
   </b:if>
@@ -391,7 +370,6 @@ function createSummaryAndThumb(pID){
           <data:post.numComments/> <data:commentLabelPlural/>:
         </b:if>
       </h4>
-
       <b:if cond='data:post.commentPagingRequired'>
         <span class='paging-control-container'>
           <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'><data:post.oldestLinkText/></a>
@@ -405,7 +383,6 @@ function createSummaryAndThumb(pID){
           <a expr:class='data:post.newLinkClass' expr:href='data:post.newestLinkUrl'><data:post.newestLinkText/></a>
         </span>
       </b:if>
-
       <div expr:id='data:widget.instanceId + &quot;_comments-block-wrapper&quot;'>
         <dl expr:class='data:post.avatarIndentClass' id='comments-block'>
           <b:loop values='data:post.comments' var='comment'>
@@ -444,7 +421,6 @@ function createSummaryAndThumb(pID){
           </b:loop>
         </dl>
       </div>
-
       <b:if cond='data:post.commentPagingRequired'>
         <span class='paging-control-container'>
           <a expr:class='data:post.oldLinkClass' expr:href='data:post.oldestLinkUrl'>
@@ -464,7 +440,6 @@ function createSummaryAndThumb(pID){
           </a>
         </span>
       </b:if>
-
       <p class='comment-footer'>
         <b:if cond='data:post.embedCommentForm'>
           <b:if cond='data:post.allowNewComments'>
@@ -477,7 +452,6 @@ function createSummaryAndThumb(pID){
             <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
           </b:if>
         </b:if>
-
       </p>
     </b:if>
     <b:if cond='data:showCmtPopup'>
@@ -486,7 +460,6 @@ function createSummaryAndThumb(pID){
         </iframe>
       </div>
     </b:if>
-
     <div id='backlinks-container'>
     <div expr:id='data:widget.instanceId + &quot;_backlinks-container&quot;'>
        <b:if cond='data:post.showBacklinks'>
@@ -503,7 +476,6 @@ function createSummaryAndThumb(pID){
         <b:include data='feedLinks' name='feedLinksBody'/>
       </div>
     </b:if>
-
     <b:else/> <!--Post feed links -->
     <div class='post-feeds'>
       <b:loop values='data:posts' var='post'>
@@ -528,7 +500,6 @@ function createSummaryAndThumb(pID){
   <b:if cond='data:post.allowComments'>
     <script expr:src='data:post.commentSrc' type='text/javascript'/>
     <div class='cmt_iframe_holder'/>
-
     <b:if cond='data:post.embedCommentForm == &quot;false&quot;'>
       <a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:postCommentMsg/></a>
     </b:if>
@@ -541,15 +512,12 @@ function createSummaryAndThumb(pID){
         <span><data:post.dateHeader/></span>
       </div>
     </b:if>
-
     <div class='mobile-post-outer'>
       <a expr:href='data:post.url'>
         <h3 class='mobile-index-title entry-title'>
           <data:post.title/>
         </h3>
-
         <div class='mobile-index-arrow'>&amp;rsaquo;</div>
-
         <div class='mobile-index-contents'>
           <b:if cond='data:post.thumbnailUrl'>
             <div class='mobile-index-thumbnail'>
@@ -558,15 +526,12 @@ function createSummaryAndThumb(pID){
               </div>
             </div>
           </b:if>
-
           <div class='post-body'>
             <b:if cond='data:post.snippet'><data:post.snippet/></b:if>
           </div>
         </div>
-
         <div style='clear: both;'/>
       </a>
-
       <div class='mobile-index-comment'>
         <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
           <b:if cond='data:post.allowComments'>
@@ -582,9 +547,7 @@ function createSummaryAndThumb(pID){
     <b:includable id='mobile-main' var='top'>
     <!-- posts -->
     <div class='blog-posts hfeed'>
-
       <b:include data='top' name='status-message'/>
-
       <b:if cond='data:blog.pageType == &quot;index&quot;'>
         <b:loop values='data:posts' var='post'>
           <b:include data='post' name='mobile-index-post'/>
@@ -595,7 +558,6 @@ function createSummaryAndThumb(pID){
         </b:loop>
       </b:if>
     </div>
-
    <b:include name='mobile-nextprev'/>
 </b:includable>
     <b:includable id='mobile-nextprev'>
@@ -605,21 +567,17 @@ function createSummaryAndThumb(pID){
       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'>&amp;lsaquo;</a>
       </div>
     </b:if>
-
     <b:if cond='data:olderPageUrl'>
       <div class='mobile-link-button' id='blog-pager-older-link'>
       <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'>&amp;rsaquo;</a>
       </div>
     </b:if>
-
     <div class='mobile-link-button' id='blog-pager-home-link'>
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
     </div>
-
     <div class='mobile-desktop-link'>
       <a class='home-link' expr:href='data:desktopLinkUrl'><data:desktopLinkMsg/></a>
     </div>
-
   </div>
   <div class='clear'/>
 </b:includable>
@@ -630,7 +588,6 @@ function createSummaryAndThumb(pID){
     </b:if>
     <div class='date-posts'>
       <div class='post-outer'>
-
         <div class='post hentry uncustomized-post-template'>
           <a expr:name='data:post.id'/>
 		  <!-- 文章标题[ -->
@@ -655,12 +612,10 @@ function createSummaryAndThumb(pID){
           <div class='post-header'>
             <div class='post-header-line-1'/>
           </div>
-
           <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
             <data:post.body/>
             <div style='clear: both;'/> <!-- clear for photos floats -->
           </div>
-
           <div class='post-footer'>
             <div class='post-footer-line post-footer-line-1'>
 			<!-- 文章作者资讯[-->
@@ -700,7 +655,6 @@ function createSummaryAndThumb(pID){
               </span>
 			<!-- 留言数量] -->
             </div>
-
             <div class='post-footer-line post-footer-line-2'>
               <b:if cond='data:top.showMobileShare'>
                 <div class='mobile-link-button goog-inline-block' id='mobile-share-button'>
@@ -711,10 +665,8 @@ function createSummaryAndThumb(pID){
                 <div class='goog-inline-block dummy-container'><data:post.dummyTag/></div>
               </b:if>
             </div>
-
           </div>
         </div>
-
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'>
   <b:include data='post' name='comment_picker'/>
 </b:if>
@@ -732,21 +684,17 @@ function createSummaryAndThumb(pID){
       <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-newer-link&quot;' expr:title='data:newerPageTitle'><data:newerPageTitle/></a>
       </span>
     </b:if>
-
     <b:if cond='data:olderPageUrl'>
       <span id='blog-pager-older-link'>
       <a class='blog-pager-older-link' expr:href='data:olderPageUrl' expr:id='data:widget.instanceId + &quot;_blog-pager-older-link&quot;' expr:title='data:olderPageTitle'><data:olderPageTitle/></a>
       </span>
     </b:if>
-
     <a class='home-link' expr:href='data:blog.homepageUrl'><data:homeMsg/></a>
-
     <b:if cond='data:mobileLinkUrl'>
       <div class='blog-mobile-link'>
         <a expr:href='data:mobileLinkUrl'><data:mobileLinkMsg/></a>
       </div>
     </b:if>
-
   </div>
   <div class='clear'/>
 </b:includable>
@@ -756,7 +704,6 @@ function createSummaryAndThumb(pID){
   <meta expr:content='data:post.firstImageUrl' itemprop='image'/>
 </b:if>
 <a expr:name='data:post.id'/>
-	
 <header class='entry-header'>
 <h2 class='post-title entry-title' itemprop='headline'>
  <b:if cond='data:post.link'>
@@ -770,7 +717,6 @@ function createSummaryAndThumb(pID){
  </b:if>
 </h2>
 </header>
-
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <div class='entry-metanbt'>
 <b:if cond='data:top.showAuthor'><span class='post-author vcard'><i class='fa fa-user'/>&amp;nbsp;<b:if cond='data:post.authorProfileUrl'><span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'><meta expr:content='data:post.authorProfileUrl' itemprop='url'/><a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'><span itemprop='name'><data:post.author/></span></a></span><b:else/><span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'><span itemprop='name'><data:post.author/></span></span></b:if></span>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
@@ -780,11 +726,8 @@ function createSummaryAndThumb(pID){
 <b:include data='post' name='postQuickEdit'/>
 </div>
 </b:if>
-
 <div class='post-header-line-1'/>
-
 <div class='post-body entry-content' expr:id='&quot;post-body-&quot; + data:post.id'>
-
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <div expr:id='&quot;summary&quot; + data:post.id'><data:post.body/></div>
@@ -793,11 +736,9 @@ function createSummaryAndThumb(pID){
 </b:if>
 <b:if cond='data:blog.pageType == &quot;item&quot;'><data:post.body/></b:if>
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'><data:post.body/></b:if>
-
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <!--该处文章尾部自带分享按钮-->
 </b:if>
-
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <div style='float:right;padding-right:0;margin-top:5px;'>
@@ -806,10 +747,8 @@ function createSummaryAndThumb(pID){
 </b:if>
 </b:if>
 <div style='clear: both;'/> <!-- clear for photos floats -->
-
 </div>
-
-<b:if cond='data:blog.pageType == &quot;item&quot;'>	  
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
 <div class='post-iconspbt'>
 <span class='post-icons' style='padding-right:10px;'>
 <!-- email图标[ -->
@@ -826,17 +765,14 @@ function createSummaryAndThumb(pID){
 <div class='bdsharebuttonbox'><a class='bds_more' data-cmd='more' href='#'>分享到&#65306;</a><a class='bds_qzone' data-cmd='qzone' href='#' title='分享到QQ空间'>QQ空间</a><a class='bds_tsina' data-cmd='tsina' href='#' title='分享到新浪微博'>新浪微博</a><a class='bds_tqq' data-cmd='tqq' href='#' title='分享到腾讯微博'>腾讯微博</a><a class='bds_renren' data-cmd='renren' href='#' title='分享到人人网'>人人网</a><a class='bds_weixin' data-cmd='weixin' href='#' title='分享到微信'>微信</a></div>
 <script>window._bd_share_config={&quot;common&quot;:{&quot;bdSnsKey&quot;:{},&quot;bdText&quot;:&quot;&quot;,&quot;bdMini&quot;:&quot;2&quot;,&quot;bdMiniList&quot;:false,&quot;bdPic&quot;:&quot;&quot;,&quot;bdStyle&quot;:&quot;1&quot;,&quot;bdSize&quot;:&quot;16&quot;},&quot;share&quot;:{&quot;bdSize&quot;:16}};with(document)0[(getElementsByTagName(&#39;head&#39;)[0]||body).appendChild(createElement(&#39;script&#39;)).src=&#39;http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=&#39;+~(-new Date()/36e5)];</script>
 <!-- 百度分享结束 -->
-
  <div class='post-share-buttons goog-inline-block'>
 <b:if cond='data:post.sharePostUrl'>
   <b:include data='post' name='shareButtons'/>
 </b:if>
 </div>
-
 <div style='clear: both;'/>
 </div>
 </b:if>
-
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <div class='post-location post-locationpbt'>
 <b:if cond='data:top.showLocation'>
@@ -847,7 +783,6 @@ function createSummaryAndThumb(pID){
 </b:if>
 </div>
 </b:if>
-
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <b:if cond='data:post.authorAboutMe'>
 <div class='author-profile' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'>
@@ -865,7 +800,6 @@ function createSummaryAndThumb(pID){
 </div>
 </b:if>
 </b:if>
-  
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <div class='related-postbwrap' id='bpostrelated-post'/>
 <div style='clear: both;'/>
@@ -890,7 +824,6 @@ callBack: function() {}
 </script>
 <script type='text/javascript'>
 //<![CDATA[
-
 /*! Related Post Widget for Blogger by Taufik Nurrohman => http://gplus.to/tovic */
 var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>Artikel Terkait:</h4>",widgetStyle:1,homePage:"http://www.dte.web.id",numbrelatedPosts:7,summaryLength:370,titleLength:"auto",thumbnailSize:72,noImage:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAA3NCSVQICAjb4U/gAAAADElEQVQImWOor68HAAL+AX7vOF2TAAAAAElFTkSuQmCC",containerId:"related-post",newTabLink:false,moreText:"Baca Selengkapnya",callBack:function(){}};for(var f in relatedPostConfig){d[f]=(relatedPostConfig[f]=="undefined")?d[f]:relatedPostConfig[f]}var j=function(a){var b=m.createElement("script");b.type="text/javascript";b.src=a;k.appendChild(b)},o=function(b,a){return Math.floor(Math.random()*(a-b+1))+b},l=function(a){var p=a.length,c,b;if(p===0){return false}while(--p){c=Math.floor(Math.random()*(p+1));b=a[p];a[p]=a[c];a[c]=b}return a},e=(typeof labelArray=="object"&&labelArray.length>0)?"/-/"+l(labelArray)[0]:"",h=function(b){var c=b.feed.openSearch$totalResults.$t-d.numbrelatedPosts,a=o(1,(c>0?c:1));j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&start-index="+a+"&max-results="+d.numbrelatedPosts+"&callback=showRelatedPost")},g=function(z){var s=document.getElementById(d.containerId),x=l(z.feed.entry),A=d.widgetStyle,c=d.widgetTitle+'<ul class="related-post-style-'+A+'">',b=d.newTabLink?' target="_blank"':"",y='<span style="display:block;clear:both;"></span>',v,t,w,r,u;if(!s){return}for(var q=0;q<d.numbrelatedPosts;q++){if(q==x.length){break}t=x[q].title.$t;w=(d.titleLength!=="auto"&&d.titleLength<t.length)?t.substring(0,d.titleLength)+"&hellip;":t;r=("media$thumbnail" in x[q]&&d.thumbnailSize!==false)?x[q].media$thumbnail.url.replace(/\/s[0-9]+(\-c)?/,"/s"+d.thumbnailSize+"-c"):d.noImage;u=("summary" in x[q]&&d.summaryLength>0)?x[q].summary.$t.replace(/<br ?\/?>/g," ").replace(/<.*?>/g,"").replace(/[<>]/g,"").substring(0,d.summaryLength)+"&hellip;":"";for(var p=0,a=x[q].link.length;p<a;p++){v=(x[q].link[p].rel=="alternate")?x[q].link[p].href:"#"}if(A==2){c+='<li><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+'</span> <a href="'+v+'" class="related-post-item-more"'+b+">"+d.moreText+"</a></span>"+y+"</li>"}else{if(A==3||A==4){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-title" href="'+v+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"></a><div class="related-post-item-tooltip"><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+"</a></div>"+y+"</li>"}else{if(A==5){c+='<li class="related-post-item" tabindex="0"><a class="related-post-item-wrapper" href="'+v+'" title="'+t+'"'+b+'><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-tooltip">'+w+"</span></a>"+y+"</li>"}else{if(A==6){c+='<li><a class="related-post-item-title" title="'+t+'" href="'+v+'"'+b+">"+w+'</a><div class="related-post-item-tooltip"><img alt="" class="related-post-item-thumbnail" src="'+r+'" width="'+d.thumbnailSize+'" height="'+d.thumbnailSize+'"><span class="related-post-item-summary"><span class="related-post-item-summary-text">'+u+"</span></span>"+y+"</div></li>"}else{c+='<li><a title="'+t+'" href="'+v+'"'+b+">"+w+"</a></li>"}}}}}s.innerHTML=c+="</ul>"+y;d.callBack()};randomRelatedIndex=h;showRelatedPost=g;j(d.homePage.replace(/\/$/,"")+"/feeds/posts/summary"+e+"?alt=json-in-script&orderby=updated&max-results=0&callback=randomRelatedIndex")})(window,document,document.getElementsByTagName("head")[0]);
 //]]>
@@ -953,19 +886,16 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </b:includable>
     <b:includable id='threaded_comment_js' var='post'>
   <script async='async' expr:src='data:post.commentSrc' type='text/javascript'/>
-
   <script type='text/javascript'>
     (function() {
       var items = <data:post.commentJso/>;
       var msgs = <data:post.commentMsgs/>;
       var config = <data:post.commentConfig/>;
-
 // <![CDATA[
       var cursor = null;
       if (items && items.length > 0) {
         cursor = parseInt(items[items.length - 1].timestamp) + 1;
       }
-
       var bodyFromEntry = function(entry) {
         if (entry.gd$extendedProperty) {
           for (var k in entry.gd$extendedProperty) {
@@ -976,7 +906,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
         }
         return entry.content.$t;
       }
-
       var parse = function(data) {
         cursor = null;
         var comments = [];
@@ -1022,7 +951,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
         }
         return comments;
       };
-
       var paginator = function(callback) {
         if (hasMore()) {
           var url = config.feed + '?alt=json&v=2&orderby=published&reverse=false&max-results=50';
@@ -1060,11 +988,9 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
         }
         return '';
       };
-
       var replybox = null;
       var replyUrlParts = null;
       var replyParent = undefined;
-
       var onReply = function(commentId, domId) {
         if (replybox == null) {
           // lazily cache replybox, and adjust to suit this style:
@@ -1083,7 +1009,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
           replyParent = commentId;
         }
       };
-
       var hash = (window.location.hash || '#').substring(1);
       var startThread, targetComment;
       if (/^comment-form_/.test(hash)) {
@@ -1091,7 +1016,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
       } else if (/^c[0-9]+$/.test(hash)) {
         targetComment = hash.substring(1);
       }
-
       // Configure commenting API:
       var configJso = {
         'maxDepth': config.maxThreadDepth
@@ -1109,14 +1033,12 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
         'config': configJso,
         'messages': msgs
       };
-
       var render = function() {
         if (window.goog && window.goog.comments) {
           var holder = document.getElementById('comment-holder');
           window.goog.comments.render(holder, provider);
         }
       };
-
       // render now, or queue to render when library loads:
       if (window.goog && window.goog.comments) {
         render();
@@ -1134,7 +1056,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   <div class='comments' id='comments'>
     <a name='comments'/>
     <h4><data:post.commentLabelFull/>:</h4>
-
     <div class='comments-content'>
       <b:if cond='data:post.embedCommentForm'>
         <b:include data='post' name='threaded_comment_js'/>
@@ -1143,7 +1064,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
          <data:post.commentHtml/>
       </div>
     </div>
-
     <p class='comment-footer'>
       <b:if cond='data:post.allowNewComments'>
         <b:include data='post' name='threaded-comment-form'/>
@@ -1151,7 +1071,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
         <data:post.noNewCommentsText/>
       </b:if>
     </p>
-
     <b:if cond='data:showCmtPopup'>
       <div id='comment-popup'>
         <iframe allowtransparency='true' frameborder='0' id='comment-actions' name='comment-actions' scrolling='no'>
@@ -1172,9 +1091,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </b:section>
 </div><!-- #main -->
 </div><!-- #primary -->
-
 <div class='widget-areanbt' id='secondarynbt'>
-
 <div class='widget widget_searchnbt'>
 <form action='/search' class='search-form' method='get' role='search'>
 <label>
@@ -1196,19 +1113,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </div>
  -->
 <b:section class='sidebarwidgetsarea' id='sidebarwidgetsarea' preferred='yes'>
-  <b:widget id='HTML3' locked='false' title='百度站内搜索' type='HTML' visible='true'>
-    <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
-<!--   <b:include name='quickedit'/> -->
-</b:includable>
-  </b:widget>
   <b:widget id='Text2' locked='false' title='联系方式' type='Text' version='1' visible='true'>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
@@ -1302,7 +1206,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </b:widget>
   <b:widget id='LinkList1' locked='false' title='专题文章' type='LinkList' version='1' visible='true'>
     <b:includable id='main'>
-
 <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
  <div class='widget-content'>
    <ul>
@@ -1314,7 +1217,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
  </div>
 </b:includable>
   </b:widget>
-  <b:widget id='HTML2' locked='false' title='我的微博' type='HTML' visible='true'>
+  <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' version='1' visible='true'>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
@@ -1323,20 +1226,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   <div class='widget-content'>
     <data:content/>
   </div>
-
-<!--   <b:include name='quickedit'/> -->
-</b:includable>
-  </b:widget>
-  <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' visible='true'>
-    <b:includable id='main'>
-  <!-- only display title if it's non-empty -->
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2 class='title'><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-    <data:content/>
-  </div>
-
 <!--   <b:include name='quickedit'/> -->
 </b:includable>
   </b:widget>
@@ -1346,7 +1235,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     <b:if cond='data:title != &quot;&quot;'>
       <h2 class='title'><data:title/></h2>
     </b:if>
-
     <div class='widget-content'>
       <div class='blog-list-container' expr:id='data:widget.instanceId + &quot;_container&quot;'>
         <ul expr:id='data:widget.instanceId + &quot;_blogs&quot;'>
@@ -1399,7 +1287,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
             </li>
           </b:loop>
         </ul>
-
         <b:if cond='data:numItemsToShow != 0 and data:totalItems &gt; data:numItemsToShow'>
           <div class='show-option'>
             <span expr:id='data:widget.instanceId + &quot;_show-n&quot;' style='display: none;'>
@@ -1414,17 +1301,14 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
             </span>
           </div>
         </b:if>
-
         <!-- <b:include name='quickedit'/> -->
       </div>
     </div>
   </b:includable>
   </b:widget>
 </b:section>
-
 </div><!-- #secondary -->
 </div><!-- #content -->
-
 <footer class='site-footernbt' id='colophonnbt'>
 <div class='containernbt'>
 <div class='three-column-footernbt'>
@@ -1432,7 +1316,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </div>
 </div>
 </footer><!-- #colophon -->
-
 <div class='footer-credit-important'>
 <div class='containernbt'>
 <div class='copyright-textnbt'>
@@ -1444,23 +1327,15 @@ Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();doc
 </div>
 </div>
 </div>
-   
 </div><!-- #page -->
-
+<script src='//cdn.bootcss.com/sidr/2.2.1/jquery.sidr.min.js' type='text/javascript'/>
 <script type='text/javascript'>
 //<![CDATA[
-
-/*! Sidr - v1.2.1 - 2013-11-06
- * https://github.com/artberri/sidr
- * Copyright (c) 2013 Alberto Varela; Licensed MIT */
-(function(e){var t=!1,i=!1,n={isUrl:function(e){var t=RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$","i");return t.test(e)?!0:!1},loadContent:function(e,t){e.html(t)},addPrefix:function(e){var t=e.attr("id"),i=e.attr("class");"string"==typeof t&&""!==t&&e.attr("id",t.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-id-$1")),"string"==typeof i&&""!==i&&"sidr-inner"!==i&&e.attr("class",i.replace(/([A-Za-z0-9_.\-]+)/g,"sidr-class-$1")),e.removeAttr("style")},execute:function(n,s,a){"function"==typeof s?(a=s,s="sidr"):s||(s="sidr");var r,d,l,c=e("#"+s),u=e(c.data("body")),f=e("html"),p=c.outerWidth(!0),g=c.data("speed"),h=c.data("side"),m=c.data("displace"),v=c.data("onOpen"),y=c.data("onClose"),x="sidr"===s?"sidr-open":"sidr-open "+s+"-open";if("open"===n||"toggle"===n&&!c.is(":visible")){if(c.is(":visible")||t)return;if(i!==!1)return o.close(i,function(){o.open(s)}),void 0;t=!0,"left"===h?(r={left:p+"px"},d={left:"0px"}):(r={right:p+"px"},d={right:"0px"}),u.is("body")&&(l=f.scrollTop(),f.css("overflow-x","hidden").scrollTop(l)),m?u.addClass("sidr-animating").css({width:u.width(),position:"absolute"}).animate(r,g,function(){e(this).addClass(x)}):setTimeout(function(){e(this).addClass(x)},g),c.css("display","block").animate(d,g,function(){t=!1,i=s,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),v()}else{if(!c.is(":visible")||t)return;t=!0,"left"===h?(r={left:0},d={left:"-"+p+"px"}):(r={right:0},d={right:"-"+p+"px"}),u.is("body")&&(l=f.scrollTop(),f.removeAttr("style").scrollTop(l)),u.addClass("sidr-animating").animate(r,g).removeClass(x),c.animate(d,g,function(){c.removeAttr("style").hide(),u.removeAttr("style"),e("html").removeAttr("style"),t=!1,i=!1,"function"==typeof a&&a(s),u.removeClass("sidr-animating")}),y()}}},o={open:function(e,t){n.execute("open",e,t)},close:function(e,t){n.execute("close",e,t)},toggle:function(e,t){n.execute("toggle",e,t)},toogle:function(e,t){n.execute("toggle",e,t)}};e.sidr=function(t){return o[t]?o[t].apply(this,Array.prototype.slice.call(arguments,1)):"function"!=typeof t&&"string"!=typeof t&&t?(e.error("Method "+t+" does not exist on jQuery.sidr"),void 0):o.toggle.apply(this,arguments)},e.fn.sidr=function(t){var i=e.extend({name:"sidr",speed:200,side:"left",source:null,renaming:!0,body:"body",displace:!0,onOpen:function(){},onClose:function(){}},t),s=i.name,a=e("#"+s);if(0===a.length&&(a=e("<div />").attr("id",s).appendTo(e("body"))),a.addClass("sidr").addClass(i.side).data({speed:i.speed,side:i.side,body:i.body,displace:i.displace,onOpen:i.onOpen,onClose:i.onClose}),"function"==typeof i.source){var r=i.source(s);n.loadContent(a,r)}else if("string"==typeof i.source&&n.isUrl(i.source))e.get(i.source,function(e){n.loadContent(a,e)});else if("string"==typeof i.source){var d="",l=i.source.split(",");if(e.each(l,function(t,i){d+='<div class="sidr-inner">'+e(i).html()+"</div>"}),i.renaming){var c=e("<div />").html(d);c.find("*").each(function(t,i){var o=e(i);n.addPrefix(o)}),d=c.html()}n.loadContent(a,d)}else null!==i.source&&e.error("Invalid Sidr Source");return this.each(function(){var t=e(this),i=t.data("sidr");i||(t.data("sidr",s),"ontouchstart"in document.documentElement?(t.bind("touchstart",function(e){e.originalEvent.touches[0],this.touched=e.timeStamp}),t.bind("touchend",function(e){var t=Math.abs(e.timeStamp-this.touched);200>t&&(e.preventDefault(),o.toggle(s))})):t.click(function(e){e.preventDefault(),o.toggle(s)}))})}})(jQuery);
-
 jQuery(document).ready(function(){
     jQuery('#responsive-menu-buttonnbt').sidr({
       name: 'sidr-main',
       source: '#respo-navigationnbt',
             side: 'right'
-
     });
     if (jQuery('#back-to-topnbt').length) {
     var scrollTrigger = 100, // px
@@ -1480,7 +1355,6 @@ jQuery(document).ready(function(){
 }
 jQuery('.widget-areanbt .widget h2').wrapInner('<span/>');
 });
-
 //]]>
 </script>
 <!-- 屏蔽blogger默认加载的js开始 -->
