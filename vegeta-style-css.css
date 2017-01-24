@@ -78,7 +78,7 @@ p{margin-bottom:1.5em;}
 dfn,cite,em,i{font-style:italic;}
 blockquote{margin:1.5em;}
 address{margin:0 0 1.5em;}
-pre{background:#F5F5D5;font-family:"Courier 10 Pitch",Courier,monospace;font-size:15px;font-size:0.9375rem;line-height:1.3;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:0.3em;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;}
+pre{background:#F5F5D5;font-family:"Courier 10 Pitch",Courier,monospace;font-size:16px;font-size:0.9375rem;line-height:1.3;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:0.3em;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;}
 code,kbd,tt,var{font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;font-size:15px;font-size:0.9375rem;}
 abbr,acronym{border-bottom:1px dotted #666;cursor:help;}
 mark,ins{background:#fff9c0;text-decoration:none;}
