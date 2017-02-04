@@ -65,7 +65,7 @@ legend{border:0;padding:0;}
 textarea{overflow:auto;}
 optgroup{font-weight:bold;}
 table{border-collapse:collapse;border-spacing:0;}
-td,th{padding:0;}
+td,th{padding:0;border:1.5px solid #008000;}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);height:1px;overflow:hidden;position:absolute !important;width:1px;}
 
 /*--------------------------------------------------------------
@@ -218,7 +218,7 @@ ul.sub-menu li a{margin-top:0;}
 .image-container{margin-bottom:10px;}
 .content-areanbt article{background:#F5F5D5;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
 .entry-header .entry-metanbt{margin-bottom:14px;}
-.entry-content blockquote{border-left:4px solid #008000;padding-left:10px;font: bold 19px Consolas,"Courier New","KaiTi","KaiTi_GB2312","FangSong_GB2312",SimHei,arial,Monaco,monospace;font-style:normal;background-color:#C3F3F7;}
+.entry-content blockquote{background-color:#C3F3F7;border-style:solid;border-radius:16px;border-color:#008000;padding-left:14px;padding-right:10px;font-style:normal;}
 .entry-content ol,.entry-content ul{margin:0;margin-bottom:20px;color:#7f7f7f;font-size:16px;}
 .entry-content ol li,.entry-content ul li{margin-bottom:10px;margin-left:1em;}
 .entry-footer .cat-links a,.entry-footer .tags-links a{background-color:#fff;border:1px solid #D2D2D2;padding:10px;padding-top:6px;padding-bottom:6px;border-radius:3px;color:#8B8B8B;line-height:43px;margin-right:5px;font-size:14px;}
