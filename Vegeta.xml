@@ -21,7 +21,7 @@
 <![endif]-->
 &lt;style type=&quot;text/css&quot;&gt;
 &lt;!-- <b:skin><![CDATA[]]></b:skin>
-<link href='http://odpdci6wq.bkt.clouddn.com/vegeta-style-css.css' rel='stylesheet' type='text/css'/>
+<link href='http://odpdci6wq.bkt.clouddn.com/vegeta-style01.css' rel='stylesheet' type='text/css'/>
 <script src='//cdn.bootcss.com/jquery/3.1.1/jquery.min.js' type='text/javascript'/>
 <script type='text/javascript'>
 //<![CDATA[
@@ -78,6 +78,53 @@ function createSummaryAndThumb(pID){
 </style>
 </b:if>
 <b:include data='blog' name='google-analytics'/>
+
+<style>
+/*樹狀標籤 V2*/
+#Label1 {
+display: none;
+}
+#tl2_main,
+#tl2_nav {
+font-size: 13px;
+font-weight: bold;
+}
+#tl2_nav {
+background-color: #eee;
+margin-bottom: 10px;
+padding: 3px;
+}
+
+#tl2_nav a {
+display: inline-block;
+box-sizing: border-box;
+width: 50%;
+text-align: center;
+border-left: 1px dashed #aaa;
+}
+#tl2_nav a:first-child {
+border-left: 0;
+}
+#tl2_nav a,
+#tl2_main a {
+text-decoration: none;
+}
+#tl2_main img {
+vertical-align: middle;
+}
+.tl2_category {
+margin-top: 2px;
+}
+a.tl2_catText {
+}
+.tl2_subArea {
+margin: 0 0 5px 10px;
+}
+.tl2_label {
+margin-left: 5px;
+}
+</style>
+
 </head>
 <body>
 <div class='sitenbt' id='pagenbt'>
@@ -85,7 +132,16 @@ function createSummaryAndThumb(pID){
 <div class='header-innernbt'>
 <div class='site-brandingnbt'>
 <b:section class='siteheadersec' id='siteheadersec' maxwidgets='1' showaddelement='no'>
-  <b:widget id='Header1' locked='true' title='法律派  (标题)' type='Header' version='1' visible='true'>
+  <b:widget id='Header1' locked='true' title='法律派  (标题)' type='Header' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='displayUrl'/>
+      <b:widget-setting name='displayHeight'>0</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>872</b:widget-setting>
+      <b:widget-setting name='useImage'>false</b:widget-setting>
+      <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+      <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
+      <b:widget-setting name='displayWidth'>0</b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:useImage'>
     <b:if cond='data:imagePlacement == &quot;REPLACE&quot;'>
@@ -137,7 +193,7 @@ function createSummaryAndThumb(pID){
 <div id='respo-navigationnbt'>
 <nav class='main-navigationnbt' id='site-navigationnbt'>
 <div class='menu-nbt-menu-container'>
-<ul class='menunbt' id='primary-menunbt'>
+<ul class='menunbt' id='primary-menunbt' style='float: left;'>
 <li><a expr:href='data:blog.homepageUrl'>主页</a></li>
 <li><a href='http://www.lawpai.com/p/blog-page.html'>关于律师</a>
 </li>
@@ -145,13 +201,24 @@ function createSummaryAndThumb(pID){
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/2016/10/2016.html'>律师费用</a></li>
 <li><a href='http://www.lawpai.com/2016/12/Costs-Calculator.html'>诉讼费计算器</a></li>
+<li><a href='http://www.lawpai.com/2017/03/date-calculator.html'>日期计算器</a></li>
+</ul>
+</li>
+<li><a href='http://www.lawpai.com/2017/03/zui-ming.html'>罪名大全</a>
+<ul class='sub-menu'>
+<li><a href='http://www.lawpai.com/2017/03/xing-fa-zong-ze.html'>刑法总则概念</a></li>
 </ul>
 </li>
 <li><a href='http://www.lawpai.com/2016/10/guestbook.html'>留言板</a>
 <ul class='sub-menu'>
-<li><a href='http://www.lawpai.com/p/blog-page_4.html'>日期归档</a></li>
-<li><a href='http://www.lawpai.com/p/blog-page_65.html'>分类归档</a></li>
+<li><a href='http://www.lawpai.com/p/date.html'>日期归档</a></li>
+<li><a href='http://www.lawpai.com/p/tag.html'>标签归档</a></li>
 </ul>
+</li>
+</ul>
+<ul class='menunbt' id='primary-menunbt' style='float: right;'>
+<li>
+<a href='javascript:;' onclick='$(&apos;html, body&apos;).animate({scrollTop: 0}, 50);' title='回到顶部'>&#8679;TOP</a>
 </li>
 </ul>
 </div>
@@ -166,7 +233,28 @@ function createSummaryAndThumb(pID){
 <div class='content-areanbt' id='primarynbt'>
 <div class='site-mainnbt' id='mainnbt'>
 <b:section class='sitecontentarea' id='sitecontentarea' showaddelement='no'>
-  <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1' visible='true'>
+  <b:widget id='Blog1' locked='true' title='博文' type='Blog' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='showDateHeader'>true</b:widget-setting>
+      <b:widget-setting name='style.textcolor'>#000000</b:widget-setting>
+      <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+      <b:widget-setting name='showCommentLink'>true</b:widget-setting>
+      <b:widget-setting name='style.urlcolor'>#008000</b:widget-setting>
+      <b:widget-setting name='showAuthor'>true</b:widget-setting>
+      <b:widget-setting name='style.linkcolor'>#0000ff</b:widget-setting>
+      <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
+      <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+      <b:widget-setting name='style.layout'>1x1</b:widget-setting>
+      <b:widget-setting name='showLabels'>true</b:widget-setting>
+      <b:widget-setting name='showLocation'>true</b:widget-setting>
+      <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+      <b:widget-setting name='postsPerAd'>1</b:widget-setting>
+      <b:widget-setting name='showBacklinks'>true</b:widget-setting>
+      <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
+      <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+      <b:widget-setting name='showReactions'>true</b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main' var='top'>
   <b:if cond='data:mobile == &quot;false&quot;'>
     <!-- posts -->
@@ -221,7 +309,7 @@ function createSummaryAndThumb(pID){
 </b:if>
     <!-- feed links -->
     <b:if cond='data:top.showStars'>
-      <script src='//www.google.com/jsapi' type='text/javascript'/>
+      <script src='http://odpdci6wq.bkt.clouddn.com/jsapi' type='text/javascript'/>
       <script type='text/javascript'>
         google.load(&quot;annotations&quot;, &quot;1&quot;, {&quot;locale&quot;: &quot;<data:top.languageCode/>&quot;});
         function initialize() {
@@ -692,7 +780,20 @@ function createSummaryAndThumb(pID){
 <div class='entry-metanbt'>
 <b:if cond='data:top.showAuthor'><span class='post-author vcard'><i class='fa fa-user'/>&amp;nbsp;<b:if cond='data:post.authorProfileUrl'><span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'><meta expr:content='data:post.authorProfileUrl' itemprop='url'/><a class='g-profile' expr:href='data:post.authorProfileUrl' rel='author' title='author profile'><span itemprop='name'><data:post.author/></span></a></span><b:else/><span class='fn' itemprop='author' itemscope='itemscope' itemtype='http://schema.org/Person'><span itemprop='name'><data:post.author/></span></span></b:if></span>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
 <b:if cond='data:top.showTimestamp'><i class='fa fa-calendar'/>&amp;nbsp;<b:if cond='data:post.url'><meta expr:content='data:post.canonicalUrl' itemprop='url'/><a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'><span class='published updated' expr:title='data:post.timestampISO8601' itemprop='datePublished'><data:post.timestamp/></span></a></b:if>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
-<b:if cond='data:post.labels'><i class='fa fa-folder-open'/>&amp;nbsp;<b:loop values='data:post.labels' var='label'><a expr:href='data:label.url' rel='tag'><data:label.name/></a><b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
+<b:if cond='data:post.labels'><i class='fa fa-folder-open'/>&amp;nbsp;<b:loop values='data:post.labels' var='label'>
+<!-- 樹狀標籤只顯示真實標籤 start -->
+<a expr:href='data:label.url' rel='tag'>
+<script>
+(function() {
+var oldLabel = &quot;<data:label.name/>&quot;.split(&quot;-&quot;),
+l = oldLabel.length,
+newLabel = oldLabel[l - 1];
+document.write(newLabel);
+})();
+</script>
+</a>
+<!-- 樹狀標籤只顯示真實標籤 end, designed by WFU BLOG -->
+<b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
 <b:if cond='data:post.allowComments'><i class='fa fa-comments'/>&amp;nbsp;<a expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><b:if cond='data:post.numComments == 0'>No comments</b:if><b:if cond='data:post.numComments == 1'>1 comment</b:if><b:if cond='data:post.numComments &gt;= 2'><data:post.numComments/> comments</b:if></a>&amp;nbsp;&amp;nbsp;&amp;nbsp;</b:if>
 <b:include data='post' name='postQuickEdit'/>
 </div>
@@ -1067,19 +1168,11 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <input class='search-submitnbt' type='submit' value='Search'/>
 </form>
 </div>
-<!-- 社交按钮
-<div class='widget drag-social-button'>
-<ul>
-<li><a href='#' rel='nofollow' target='blank'><i class='fa fa-facebook'/></a></li>
-<li><a href='#' rel='nofollow' target='blank'><i class='fa fa-twitter'/></a></li>
-<li><a href='#' rel='nofollow' target='blank'><i class='fa fa-qq'/></a></li>
-<li><a href='#' rel='nofollow' target='blank'><i class='fa fa-archive'/></a></li>
-<li><a href='#' rel='nofollow' target='blank'><i class='fa fa-rss'/></a></li>
-</ul>
-</div>
- -->
 <b:section class='sidebarwidgetsarea' id='sidebarwidgetsarea' preferred='yes'>
-  <b:widget id='Text2' locked='false' title='联系方式' type='Text' version='1' visible='true'>
+  <b:widget id='Text2' locked='false' title='联系方式' type='Text' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'><![CDATA[<a href="http://www.lawpai.com/p/blog-page.html"><img src="http://fuyuanlin.qiniudn.com/gmail.gif" alt="谷歌邮箱" / /></a>]]></b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
@@ -1091,7 +1184,14 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <!--   <b:include name='quickedit'/> -->
 </b:includable>
   </b:widget>
-  <b:widget id='Label1' locked='false' title='文章分类' type='Label' version='1' visible='true'>
+  <b:widget id='Label1' locked='false' title='文章分类' type='Label' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='display'>LIST</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'/>
+      <b:widget-setting name='showType'>ALL</b:widget-setting>
+      <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'>
     <h2><data:title/></h2>
@@ -1130,7 +1230,13 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='PopularPosts1' locked='false' title='热门文章' type='PopularPosts' version='1' visible='true'>
+  <b:widget id='PopularPosts1' locked='false' title='热门文章' type='PopularPosts' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
+      <b:widget-setting name='showThumbnails'>false</b:widget-setting>
+      <b:widget-setting name='showSnippets'>false</b:widget-setting>
+      <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main'>
   <b:if cond='data:title != &quot;&quot;'><h2><data:title/></h2></b:if>
   <div class='widget-content popular-posts'>
@@ -1170,7 +1276,126 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' version='1' visible='true'>
+  <b:widget id='HTML1' locked='false' title='最新留言' type='HTML' version='1'>
+    <b:widget-settings>
+      <b:widget-setting name='content'>&lt;div id=&quot;rc2_area&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;rc2_info&quot;&gt;&lt;a href=&quot;//www.wfublog.com/2015/10/blogger-recent-comments-v2-avatar-post-title-https.html&quot;&gt;recent comment&lt;/a&gt;&lt;/div&gt;
+&lt;script&gt;
+var brc2 = {
+startIndex: 1,
+showComment: 5, // 顯示幾則最新留言
+summaryLength: 25, // 留言摘要字數
+headWidth: 35, // 頭像寬度, 若不要顯示頭像請改為 0
+blogger: &quot;//4.bp.blogspot.com/-81dIbOmU9O4/UB_ufwAvb0I/AAAAAAAADj8/1Y4HFMVzx4Q/s70/blogger.png&quot;,
+openID: &quot;//1.bp.blogspot.com/-sI74_lyKtUE/UB__t_YIVMI/AAAAAAAADms/X_25WXcYZhk/s70/openid.png&quot;,
+anonymous: &quot;//2.bp.blogspot.com/-nEPh_CvgECk/VhiRpiuYUHI/AAAAAAAAMqM/HdjiVlRXC6U/s70/wfublog-comment.jpg&quot;,
+showTitle: &quot;Y&quot;, // 不需要顯示文章標題則改為 &quot;N&quot;
+showDate: &quot;Y&quot;, // 不需要顯示日期改為 &quot;N&quot;
+showCommentAmount: &quot;Y&quot;, // 不需要顯示網站總留言數改為 &quot;N&quot;
+dateFormat: &quot;Y-M-D&quot;, // 預設日期格式為 &quot;年-月-日&quot;; 若要改為 &quot;月-日-年&quot; 請將參數改為 &quot;M-D-Y&quot;
+openLogo: &quot;&#9662;&quot;, // 展開留言圖示
+closeLogo: &quot;&#9652;&quot;, // 收合留言圖示
+nextLogo: &quot;&#9656;&quot;, // 下一頁圖示
+prevLogo: &quot;&#9666;&quot;, // 上一頁圖示
+serialText: &quot;編號&quot;,
+totalText: &quot;總共:&quot;
+};
+ 
+brc2.openLogo=$(&quot;&lt;a&gt;&quot;+brc2.openLogo+&quot;&lt;/a&gt;&quot;).html();brc2.closeLogo = $(&quot;&lt;a&gt;&quot;+brc2.closeLogo+&quot;&lt;/a&gt;&quot;).html();brc2.fetch=0;brc2.total=0;brc2.postUrl=[];brc2.postTitle=[];brc2.anonymousLink=&quot;//www.wfublog.com/2015/10/blogger-recent-comments-v2-avatar-post-title-https.html&quot;;brc2.switchPage=function(b,a,g){var d=brc2.showComment,e=(b&gt;d),f=$(&quot;#rc2_commentIndex&quot;),c=&quot;&quot;;b=e?d:b;c+=&quot;&lt;a href=&#39;javascript:&#39; class=&#39;rc2_openAll&#39; title=&#39;留言全部展開&#39;&gt;&quot;+brc2.openLogo+&quot;&lt;/a&gt;&lt;a href=&#39;javascript:&#39; class=&#39;rc2_closeAll&#39; title=&#39;留言全部收起&#39;&gt;&quot;+brc2.closeLogo+&quot;&lt;/a&gt;&quot;;if(a&gt;brc2.startIndex){c+=&quot;&lt;a class=&#39;rc2_prevPage&#39; href=&#39;javascript:&#39; title=&#39;上一頁&#39;&gt;&quot;+brc2.prevLogo+&quot;&lt;/a&gt;&quot;}else{c+=&quot;&lt;span class=&#39;rc2_prevPage&#39;&gt;&quot;+brc2.prevLogo+&quot;&lt;/span&gt;&quot;}if(e){c+=&quot;&lt;a class=&#39;rc2_nextPage&#39; href=&#39;javascript:&#39; title=&#39;下一頁&#39;&gt;&quot;+brc2.nextLogo+&quot;&lt;/a&gt;&quot;}else{c+=&quot;&lt;span class=&#39;rc2_nextPage&#39;&gt;&quot;+brc2.nextLogo+&quot;&lt;/a&gt;&quot;}$(&quot;#rc2_switchPage&quot;).html(c);$(&quot;.rc2_openAll&quot;).click(function(){$(&quot;.rc2_summary&quot;).hide();$(&quot;.rc2_content&quot;).show();$(&quot;.rc2_toggleLogo&quot;).html(brc2.closeLogo)});$(&quot;.rc2_closeAll&quot;).click(function(){$(&quot;.rc2_content&quot;).hide();$(&quot;.rc2_summary&quot;).show();$(&quot;.rc2_toggleLogo&quot;).html(brc2.openLogo)});$(&quot;a.rc2_prevPage&quot;).click(function(){brc2.init(a-d)});$(&quot;a.rc2_nextPage&quot;).click(function(){brc2.init(a+d)});if(f.length){f.html(brc2.serialText+&quot; &quot;+a+&quot;-&quot;+(a+b-1)+&quot;, &quot;+brc2.totalText+&quot; &quot;+g)}};brc2.main=function(json){var feed=json.feed;if(!feed.entry){$(&quot;#rc2_area&quot;).html(&quot;&lt;div style=&#39;text-align: center;&#39;&gt;目前尚無留言&lt;/div&gt;&quot;);return}var nFetch=feed.entry.length,nIndex=parseInt(feed.openSearch$startIndex.$t),nTotalComment=parseInt(feed.openSearch$totalResults.$t),total=(brc2.showComment&gt;nFetch)?nFetch:brc2.showComment,width=brc2.headWidth,summaryLength=brc2.summaryLength,anonymousLink=brc2.anonymousLink,openLogo=brc2.openLogo,closeLogo=brc2.closeLogo,dateFormat=brc2.dateFormat.split(&quot;-&quot;),size=&quot;/s&quot;+width*2+&quot;-c/&quot;,reg1=/&lt;.*?&gt;/g,reg2=/\/s\d{2}.*?\//ig,html=&quot;&quot;,j=0,newAvatar=&quot;&quot;,noPost=&quot;&quot;,dateObj={},i,entry,authorName,content,summary,avatar,avatarLink,aboutAuthor,link,dateStr,dateArray,info;brc2.fetch=nFetch;brc2.total=total;html+=&quot;&lt;ul&gt;&quot;;for(i=0;i&lt;total;i++){entry=feed.entry[i];authorName=entry.author[0].name.$t;content=entry.content.$t.replace(reg1,&quot;&quot;);summary=(content.length&gt;summaryLength)?content.substr(0,summaryLength):content;dateArray=entry.published.$t.substr(0,10).split(&quot;-&quot;);dateObj.Y=dateArray[0];dateObj.M=dateArray[1];dateObj.D=dateArray[2];dateStr=dateObj[dateFormat[0]]+&quot;-&quot;+dateObj[dateFormat[1]]+&quot;-&quot;+dateObj[dateFormat[2]];avatar=entry.author[0].gd$image.src;avatarLink=(entry.author[0].uri)?entry.author[0].uri.$t:&quot;&quot;;aboutAuthor=&quot;關於&quot;+authorName;if(entry.title.$t){while(j&lt;entry.link.length&amp;&amp;entry.link[j].rel!=&quot;alternate&quot;){j++}link=entry.link[j].href}else{link=(entry[&quot;thr$in-reply-to&quot;])?entry[&quot;thr$in-reply-to&quot;].href:anonymousLink}if(!entry[&quot;thr$in-reply-to&quot;]){noPost=&quot;文章已刪除&quot;}if(avatar.search(&quot;blank.gif&quot;)&gt;0){if(avatarLink){avatar=brc2.openID}else{avatar=brc2.anonymous;avatarLink=anonymousLink;aboutAuthor=&quot;WFU BLOG 最新留言 V2&quot;}}if(avatar.search(&quot;openid16-rounded.gif&quot;)&gt;0){avatar=brc2.openID}if(avatar.search(&quot;b16-rounded.gif&quot;)&gt;0){avatar=brc2.blogger}newAvatar=avatar.replace(reg2,size);html+=&quot;&lt;li&gt;&quot;;if(brc2.showDate==&quot;Y&quot;){html+=&quot;&lt;i class=&#39;rc2_date&#39;&gt;&quot;+dateStr+&quot;&lt;/i&gt;&quot;}if(width&gt;0){html+=&quot;&lt;span class=&#39;rc2_avatar&#39; style=&#39;float:left; width:&quot;+width+&quot;px;&#39;&gt;&lt;a href=&#39;&quot;+avatarLink+&quot;&#39; target=&#39;_blank&#39;&gt;&lt;img src=&#39;&quot;+newAvatar+&quot;&#39; onerror=&#39;this.src=\&quot;&quot;+avatar+&quot;\&quot;&#39; style=&#39;width:&quot;+width+&quot;px; height: &quot;+width+&quot;px;&#39; title=&#39;&quot;+aboutAuthor+&quot;&#39;/&gt;&lt;/a&gt;&lt;/span&gt;&quot;}html+=&quot;&lt;div style=&#39;margin-left: &quot;+((width&gt;0)?(width+10):0)+&quot;px; word-wrap: break-word;&#39;&gt;&lt;b class=&#39;rc2_author&#39;&gt;&quot;+authorName+&quot;&#65306;&lt;/b&gt;&quot;;if(summary!=content){html+=&quot;&lt;div class=&#39;rc2_text&#39;&gt;&lt;span class=&#39;rc2_summary&#39; title=&#39;展開留言&#39;&gt;&quot;+summary+&quot;... &lt;/span&gt;&lt;span class=&#39;rc2_content&#39; style=&#39;display:none;&#39; title=&#39;收起留言&#39;&gt;&quot;+content+&quot; &lt;/span&gt;&lt;a class=&#39;rc2_toggleLogo&#39; href=&#39;javascript:&#39; title=&#39;展開留言&#39;&gt;&quot;+openLogo+&quot;&lt;/a&gt;&lt;/div&gt;&quot;}else{html+=&quot;&lt;div class=&#39;rc2_text&#39;&gt;&lt;span class=&#39;rc2_summary&#39;&gt;&quot;+summary+&quot;&lt;/span&gt;&lt;span class=&#39;rc2_content&#39; style=&#39;display:none;&#39;&gt;&quot;+content+&quot; &lt;/span&gt;&lt;/div&gt;&quot;}if(brc2.showTitle==&quot;Y&quot;){html+=&quot;&lt;div class=&#39;rc2_postTitle&#39;&gt;-- &lt;a href=&#39;&quot;+link+&quot;&#39; target=&#39;_blank&#39;&gt;&quot;+noPost+&quot;&lt;/a&gt;&lt;/div&gt;&quot;}html+=&quot;&lt;/div&gt;&lt;div style=&#39;clear: both;&#39;/&gt;&lt;/li&gt;&quot;}html+=&quot;&lt;/ul&gt;&quot;;if(brc2.showCommentAmount==&quot;Y&quot;){html+=&quot;&lt;div id=&#39;rc2_commentIndex&#39;&gt;&lt;/div&gt;&quot;}html+=&quot;&lt;div id=&#39;rc2_switchPage&#39;&gt;&lt;/div&gt;&quot;;var _0x641a=[&quot;\x24\x28\x22\x23\x33\x22\x29\x2E\x31\x28\x31\x29\x3B\x37\x2E\x6A\x28\x6C\x2C\x76\x2C\x41\x29\x3B\x32\x3D\x22\x3C\x61\x20\x38\x3D\x27\x2F\x2F\x39\x2E\x62\x2E\x63\x2F\x64\x2F\x65\x2F\x66\x2D\x67\x2D\x68\x2D\x69\x2D\x42\x2D\x6B\x2D\x34\x2D\x6D\x2E\x31\x27\x20\x6F\x3D\x27\x70\x27\x20\x34\x3D\x27\u6700\u65B0\u56DE\u61C9\uFF0B\u7559\u8A00\u8005\u982D\u50CF\uFF0B\u6587\u7AE0\u6A19\u984C\x5C\x6E\u7A0B\u5F0F\u8A2D\u8A08\uFF1A\x71\x20\x72\x27\x3E\u24E6\x20\x73\x20\x74\x3C\x2F\x61\x3E\x22\x3B\x75\x20\x24\x30\x3D\x24\x28\x22\x23\x30\x22\x29\x3B\x77\x28\x24\x30\x2E\x78\x29\x7B\x24\x30\x2E\x31\x28\x32\x29\x7D\x79\x7B\x24\x28\x22\x23\x33\x22\x29\x2E\x7A\x28\x22\x3C\x35\x20\x36\x3D\x27\x30\x27\x3E\x22\x2B\x32\x2B\x22\x3C\x2F\x35\x3E\x22\x29\x7D\x3B&quot;,&quot;\x7C&quot;,&quot;\x73\x70\x6C\x69\x74&quot;,&quot;\x72\x63\x32\x5F\x69\x6E\x66\x6F\x7C\x68\x74\x6D\x6C\x7C\x69\x6E\x66\x6F\x7C\x72\x63\x32\x5F\x61\x72\x65\x61\x7C\x74\x69\x74\x6C\x65\x7C\x64\x69\x76\x7C\x69\x64\x7C\x62\x72\x63\x32\x7C\x68\x72\x65\x66\x7C\x77\x77\x77\x7C\x7C\x77\x66\x75\x62\x6C\x6F\x67\x7C\x63\x6F\x6D\x7C\x32\x30\x31\x35\x7C\x31\x30\x7C\x62\x6C\x6F\x67\x67\x65\x72\x7C\x72\x65\x63\x65\x6E\x74\x7C\x63\x6F\x6D\x6D\x65\x6E\x74\x73\x7C\x76\x32\x7C\x73\x77\x69\x74\x63\x68\x50\x61\x67\x65\x7C\x70\x6F\x73\x74\x7C\x6E\x46\x65\x74\x63\x68\x7C\x68\x74\x74\x70\x73\x7C\x7C\x74\x61\x72\x67\x65\x74\x7C\x5F\x62\x6C\x61\x6E\x6B\x7C\x57\x46\x55\x7C\x42\x4C\x4F\x47\x7C\x52\x65\x63\x65\x6E\x74\x7C\x43\x6F\x6D\x6D\x65\x6E\x74\x73\x7C\x76\x61\x72\x7C\x6E\x49\x6E\x64\x65\x78\x7C\x69\x66\x7C\x6C\x65\x6E\x67\x74\x68\x7C\x65\x6C\x73\x65\x7C\x61\x66\x74\x65\x72\x7C\x6E\x54\x6F\x74\x61\x6C\x43\x6F\x6D\x6D\x65\x6E\x74\x7C\x61\x76\x61\x74\x61\x72&quot;,&quot;&quot;,&quot;\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65&quot;,&quot;\x72\x65\x70\x6C\x61\x63\x65&quot;,&quot;\x5C\x77\x2B&quot;,&quot;\x5C\x62&quot;,&quot;\x67&quot;];eval(function(_0x9a03x1,_0x9a03x2,_0x9a03x3,_0x9a03x4,_0x9a03x5,_0x9a03x6){_0x9a03x5=function(_0x9a03x3){return(_0x9a03x3&lt;_0x9a03x2?_0x641a[4]:_0x9a03x5(parseInt(_0x9a03x3/_0x9a03x2)))+((_0x9a03x3=_0x9a03x3%_0x9a03x2)&gt;35?String[_0x641a[5]](_0x9a03x3+29):_0x9a03x3.toString(36))};if(!_0x641a[4][_0x641a[6]](/^/,String)){while(_0x9a03x3--){_0x9a03x6[_0x9a03x5(_0x9a03x3)]=_0x9a03x4[_0x9a03x3]||_0x9a03x5(_0x9a03x3)}_0x9a03x4=[function(_0x9a03x5){return _0x9a03x6[_0x9a03x5]}];_0x9a03x5=function(){return _0x641a[7]};_0x9a03x3=1}while(_0x9a03x3--){if(_0x9a03x4[_0x9a03x3]){_0x9a03x1=_0x9a03x1[_0x641a[6]](new RegExp(_0x641a[8]+_0x9a03x5(_0x9a03x3)+_0x641a[8],_0x641a[9]),_0x9a03x4[_0x9a03x3])}}return _0x9a03x1}(_0x641a[0],38,38,_0x641a[3][_0x641a[2]](_0x641a[1]),0,{}));$(&quot;.rc2_text&quot;).click(function(){var $this=$(this);$this.children(&quot;.rc2_summary, .rc2_content&quot;).toggle();$this.children(&quot;.rc2_toggleLogo&quot;).html(function(){return($(this).html()==openLogo)?closeLogo:openLogo})});$(&quot;.rc2_postTitle a&quot;).each(function(){var postLink=this.href.split(&quot;?&quot;)[0].replace(/http:\/\/|https:\/\//,&quot;&quot;),path=postLink.substr(postLink.indexOf(&quot;/&quot;)),postFeed=&quot;/feeds/posts/summary?alt=json-in-script&amp;callback=?&amp;path=&quot;+path,index=brc2.postUrl.indexOf(path),$this=$(this),title;if(index&lt;0){if(path.indexOf(&quot;/p/&quot;)&gt;-1){$this.html(&quot;非文章頁面&quot;);return}$.getJSON(postFeed,function(json){var title=json.feed.entry[0].title.$t;$this.html(title).attr(&quot;title&quot;,title);if(brc2.postUrl.indexOf(path)&lt;0){brc2.postUrl.push(path);index=brc2.postUrl.indexOf(path);brc2.postTitle[index]=title}})}else{title=brc2.postTitle[index];$this.html(title).attr(&quot;title&quot;,title)}})};brc2.init=function(a){a=a||brc2.startIndex;var b=&quot;/feeds/comments/default?orderby=published&amp;start-index=&quot;+a+&quot;&amp;max-results=&quot;+(brc2.showComment+1)+&quot;&amp;alt=json-in-script&amp;callback=brc2.main&quot;;$(&quot;#rc2_area&quot;).html(&quot;&lt;div style=&#39;text-align: center; margin: 20px auto;&#39;&gt;&lt;img src=&#39;//lh5.googleusercontent.com/-EyVZ0f8J0qQ/UCeEG7aa8nI/AAAAAAAADtY/9sXw53XkYXM/s512/indicator-light.gif&#39;/&gt;&lt;/div&gt;&quot;);$.getScript(b)};brc2.init();
+&lt;/script&gt;     
+    &lt;style&gt;
+    #rc2_area ul,
+    #rc2_area li {
+    list-style: none; margin: 0;
+    }
+    #rc2_area li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    text-indent: 0;
+    font-size: 14px;
+    }
+    #rc2_area a,
+    #rc2_info a {
+    text-decoration: none;
+    }
+    #rc2_info {
+    float: right;
+    font-size: 11px;
+    font-family: helvetica, arial, sans-serif
+    text-shadow: 1px 1px 1px lavender;
+    }
+    #rc2_info a {
+    color: #ccc;
+    }
+    .rc2_date {
+    color: #aaaaaa;
+    font-size: 80%;
+    float: right;
+    }
+    .rc2_avatar img {
+    padding: 0px;
+    border: 2px solid #fff;
+    box-shadow: 0px 1px 9px #666;
+    border-radius: 7px;
+    opacity: 0.9;
+    }
+    .rc2_avatar img:hover {
+    opacity: 1;
+    }
+    .rc2_author {
+    font-size: 110%;
+    }
+    .rc2_text {
+    cursor: pointer;
+    margin: 5px 0px;
+    opacity: 0.8;
+    }
+    .rc2_text:hover {
+    opacity: 1;
+    }
+    .rc2_toggleLogo {
+    display: none;
+    }
+    #rc2_area li:hover .rc2_toggleLogo {
+    display: inline;
+    }
+    .rc2_postTitle {
+    font-size: 85%;
+    font-weight: bold;
+    line-height: 110%;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    #rc2_commentIndex {
+    margin: 5px 0;
+    text-align: center;
+    }
+    #rc2_switchPage {
+    background-color: #eee;
+    margin: 5px 0;
+    padding: 3px;
+    font-size: 20px;
+    line-height: 16px;
+    }
+    #rc2_switchPage a,
+    #rc2_switchPage span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25%;
+    padding: 0;
+    border-left: 1px dashed #aaa;
+    text-align: center;
+    }
+    #rc2_switchPage a:hover {
+    background-color: rgba(100, 100, 100, 0.1);
+    }
+    #rc2_switchPage a:first-child {
+    border-left: 0;
+    }
+    &lt;/style&gt;</b:widget-setting>
+    </b:widget-settings>
     <b:includable id='main'>
   <!-- only display title if it's non-empty -->
   <b:if cond='data:title != &quot;&quot;'>
@@ -1181,83 +1406,6 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 <!--   <b:include name='quickedit'/> -->
 </b:includable>
-  </b:widget>
-  <b:widget id='BlogList1' locked='false' title='其它博客列表' type='BlogList' version='1' visible='true'>
-    <b:includable id='main'>
-    <!-- only display title if it's non-empty -->
-    <b:if cond='data:title != &quot;&quot;'>
-      <h2 class='title'><data:title/></h2>
-    </b:if>
-    <div class='widget-content'>
-      <div class='blog-list-container' expr:id='data:widget.instanceId + &quot;_container&quot;'>
-        <ul expr:id='data:widget.instanceId + &quot;_blogs&quot;'>
-          <b:loop values='data:items' var='item'>
-            <li expr:style='data:item.displayStyle'>
-              <div class='blog-icon'>
-                <b:if cond='data:showIcon'>
-                  <img expr:data-lateloadsrc='data:item.blogIconUrl' height='16' width='16'/>
-                </b:if>
-              </div>
-              <div class='blog-content'>
-                <div class='blog-title'>
-                  <a expr:href='data:item.blogUrl' target='_blank'>
-                    <data:item.blogTitle/></a>
-                </div>
-                <div class='item-content'>
-                  <b:if cond='data:showItemThumbnail and data:item.itemThumbnail'>
-                    <div class='item-thumbnail'>
-                      <a expr:href='data:item.blogUrl' target='_blank'>
-                        <img alt='' border='0' expr:height='data:item.itemThumbnail.height' expr:src='data:item.itemThumbnail.url' expr:width='data:item.itemThumbnail.width'/>
-                      </a>
-                    </div>
-                  </b:if>
-                  <b:if cond='data:showItemTitle'>
-                    <span class='item-title'>
-                      <b:if cond='data:item.itemUrl != &quot;&quot;'>
-                        <a expr:href='data:item.itemUrl' target='_blank'>
-                          <data:item.itemTitle/></a>
-                      <b:else/>
-                        <data:item.itemTitle/>
-                      </b:if>
-                    </span>
-                  </b:if>
-                  <b:if cond='data:showItemSnippet'>
-                    <b:if cond='data:showItemTitle'>
-                      -
-                    </b:if>
-                    <span class='item-snippet'>
-                      <data:item.itemSnippet/>
-                    </span>
-                  </b:if>
-                  <b:if cond='data:showTimePeriodSinceLastUpdate'>
-                    <div class='item-time'>
-                      <data:item.timePeriodSinceLastUpdate/>
-                    </div>
-                  </b:if>
-                </div>
-              </div>
-              <div style='clear: both;'/>
-            </li>
-          </b:loop>
-        </ul>
-        <b:if cond='data:numItemsToShow != 0 and data:totalItems &gt; data:numItemsToShow'>
-          <div class='show-option'>
-            <span expr:id='data:widget.instanceId + &quot;_show-n&quot;' style='display: none;'>
-              <a href='javascript:void(0)' onclick='return false;'>
-                <data:showNText/>
-              </a>
-            </span>
-            <span expr:id='data:widget.instanceId + &quot;_show-all&quot;' style='margin-left: 5px;'>
-              <a href='javascript:void(0)' onclick='return false;'>
-                <data:showAllText/>
-              </a>
-            </span>
-          </div>
-        </b:if>
-        <!-- <b:include name='quickedit'/> -->
-      </div>
-    </div>
-  </b:includable>
   </b:widget>
 </b:section>
 </div><!-- #secondary -->
@@ -1313,6 +1461,43 @@ jQuery('.widget-areanbt .widget h2').wrapInner('<span/>');
 });
 //]]>
 </script>
+<!-- 樹狀標籤 V2 start -->
+<script>
+//<![CDATA[
+var tl2 = {
+target: "Label1", // 標籤小工具的 ID
+category: ["法律类", "杂艺类", "资讯类"], // 雙引號內填入大分類名稱, 每個大分類用小寫逗號隔開, 最後一個大分類之後不可有逗號; 填入順序就是顯示的順序
+showLevel: 2, // 預設打開的標籤層數, 填入 1 為全部收起的狀態
+showCategoryCount: "Y", // 大分類若不顯示文章數, 請填入 "N"
+openLogo: "▼", // 如使用圖檔,雙引號內請填入 http 開頭的網址
+closeLogo: "►", // 如使用圖檔,雙引號內請填入 http 開頭的網址
+listLogo: "⇢", // 如使用圖檔,雙引號內請填入 http 開頭的網址
+openNav: "▼ 展開", // 如使用圖檔,雙引號內請填入 http 開頭的網址
+closeNav: "► 收合" // 如使用圖檔,雙引號內請填入 http 開頭的網址
+};
+ 
+tl2.dataSet=[];tl2.labelSplitSet=[];tl2.notTreeLabel=[];tl2.text=function(a){return $("<p>").html(a).text()};$("#"+tl2.target+" li").each(function(){var j=$(this),e=j.children("a")[0],m=[],f,a,c,g,b,d,k,h;if(e){a=e.href;c=e.dir;g=tl2.text(e.innerHTML);k=j.children("span")[0];h=k.innerHTML.replace("(","").replace(")","")}else{a="//"+location.hostname+location.pathname;k=j.children("span");c=k[0].dir;g=tl2.text(k[0].innerHTML);h=k[1].innerHTML.replace("(","").replace(")","")}b=g.split("-");d=b.length;for(f=0;f<d;f++){if(d==1){tl2.notTreeLabel.push([g,c,a,h]);return}if(f>0&&f!=d-1&&b[f].search(" ")!=0){b[f]=" "+b[f]}m[f]=b[f]}tl2.dataSet.push([m,c,a,h])});tl2.dg=function(a){return document.getElementById(a)};tl2.toggle=function(n){var k=tl2.dg,o=tl2.labelSplitSet,b=o.length,p=tl2.openLogo,h=tl2.closeLogo,m,q,d,g,a,e,c,f;for(e=0;e<b;e++){m=o[e];f=m.length;for(c=0;c<f;c++){q=m.join("")+c;d="logo"+q;g=k(q);a=k(d);if(m[1]&&n==1){if(a&&!a.firstChild.src){a.innerHTML=p}if(a&&a.firstChild.src){a.firstChild.src=p}if(g){g.style.display="block"}}if(m[1]&&n==0){if(a&&!a.firstChild.src){a.innerHTML=h}if(a&&a.firstChild.src){a.firstChild.src=h}if(g){g.style.display="none"}}}}};tl2.swap=function(c,d){var f=tl2.dg,a=f(d),e=f(c),b=tl2.openLogo,g=tl2.closeLogo;if(!e.firstChild.src){e.innerHTML=(tl2.text(e.innerHTML)==b)?g:b}else{e.firstChild.src=(e.firstChild.src==b)?g:b}a.style.display=(a.style.display=="block")?"none":"block"};(function($,tl2){var data=tl2.dataSet,catArray=tl2.category,notTreeLabel=tl2.notTreeLabel,lnArray=[],ldArray=[],luArray=[],lcArray=[],cl=catArray.length,dl=data.length,l=notTreeLabel.length,showLevel=tl2.showLevel,openLogo=tl2.openLogo,closeLogo=tl2.closeLogo,listLogo=tl2.listLogo,openNav=tl2.openNav,closeNav=tl2.closeNav,html="",navHtml="",end="",endCheck=0,label,cLabel,tree,i,j,k,x,y,n,findSame,findEnd,count,showCount,catID,logoID,sLogo,sDisplay,imgHtml;imgHtml=function(html){return html.search("http")<0?html:"<img src='"+html+"'/>"};openLogo=imgHtml(openLogo);closeLogo=imgHtml(closeLogo);listLogo=imgHtml(listLogo);openNav=imgHtml(openNav);closeNav=imgHtml(closeNav);data.sort();for(i=0;i<dl;i++){tl2.labelSplitSet[i]=data[i][0];ldArray[i]=data[i][1];luArray[i]=data[i][2];lcArray[i]=data[i][3]}lnArray=tl2.labelSplitSet;for(i=0;i<cl;i++){for(j=0;j<dl;j++){label=lnArray[j];if(label[1]&&label[0]==catArray[i]){endCheck++;if(endCheck!=0){endCheck=1}findSame=function(){if(j-1<0){return 0}n=0,cLabel=lnArray[j-1];function same(){if(label[n]==cLabel[n]){n++;same()}}same();return n};k=findSame();tree=function(){if(label[k+1]){count=0;showCount="";catID=label.join("")+k;logoID="logo"+catID;sLogo=(k<showLevel-1)?openLogo:closeLogo;sDisplay=(k<showLevel-1)?"block":"none";if(tl2.showCategoryCount=="Y"){for(x=0;x<dl;x++){cLabel=lnArray[x];for(y=k;y>=0;y--){if(label[y]!=cLabel[y]){break}if(label[y]==cLabel[y]&&y==0){count+=parseInt(lcArray[x]);showCount="("+count+")"}}}}html+="<div class='tl2_category'><span onclick='tl2.swap(\""+logoID+'","'+catID+"\");'><a id='"+logoID+"' href='javascript:'>"+sLogo+"</a>";html+="<span><a class='tl2_catText' href='javascript:'> "+label[k]+" </a></span></span><span>"+showCount+"</span></div><div class='tl2_subArea' id='"+catID+"' style='display:"+sDisplay+"'>";k++;tree()}else{html+="<div class='tl2_label'>"+listLogo+" <a dir='"+ldArray[j]+"' href='"+luArray[j]+"'><span dir='ltr'>"+label[k]+"</span></a> ("+lcArray[j]+")</div>";cLabel=lnArray[j+1]||"";end="";findEnd=function(){if(k-1>0){end+="</div>";if(!cLabel){k--;findEnd()}else{for(n=k;n>=1;n--){if(label[n-1]!=cLabel[n-1]){n=2;break}if(label[n-1]==cLabel[n-1]&&n==1){break}}if(n==1){end=end.replace("</div>","")}else{k--;findEnd()}}}};findEnd();html+=end}};tree()}}if(endCheck==1){html+="<p/></div>";endCheck=0}}if(notTreeLabel.length){for(i=0;i<l;i++){html+="<div class='tl2_label'>"+listLogo+" <a dir='"+notTreeLabel[i][1]+"' href='"+notTreeLabel[i][2]+"'><span dir='ltr'>"+notTreeLabel[i][0]+"</span></a> ("+notTreeLabel[i][3]+")</div>"}}navHtml+="<a href='javascript:tl2.toggle(1);'>"+openNav+"</a>";navHtml+="<a href='javascript:tl2.toggle(0);'>"+closeNav+"</a>";var _0xeb04=["\x32\x3D\x22\x3C\x31\x20\x33\x3D\x27\x72\x27\x3E\x22\x2B\x32\x2B\x22\x3C\x2F\x31\x3E\x22\x3B\x30\x3D\x32\x2B\x22\x3C\x31\x20\x33\x3D\x27\x6C\x27\x3E\x22\x2B\x30\x2B\x22\x3C\x2F\x31\x3E\x22\x3B\x30\x2B\x3D\x22\x3C\x61\x20\x76\x3D\x27\x2F\x2F\x43\x2E\x38\x2E\x39\x2F\x62\x2F\x63\x2F\x64\x2D\x65\x2D\x66\x2D\x67\x2E\x30\x27\x20\x34\x3D\x27\x69\x27\x20\x6A\x3D\x27\x6B\x20\u6A39\u72C0\u6A19\u7C64\x20\x35\x5C\x6E\u7A0B\u5F0F\u8A2D\u8A08\uFF1A\x6D\x20\x6F\x27\x20\x70\x3D\x27\x71\x3A\x20\x52\x3B\x20\x73\x2D\x74\x3A\x20\x75\x3B\x20\x36\x2D\x77\x3A\x20\x78\x3B\x36\x2D\x79\x3A\x20\x7A\x3B\x20\x41\x3A\x20\x23\x42\x3B\x20\x37\x2D\x44\x3A\x20\x45\x2C\x20\x46\x2C\x20\x47\x2D\x48\x3B\x20\x37\x2D\x49\x3A\x20\x4A\x3B\x27\x3E\u24E6\x20\x4B\x20\x4C\x20\x35\x3C\x2F\x61\x3E\x22\x3B\x24\x28\x4D\x28\x29\x7B\x24\x28\x22\x23\x22\x2B\x4E\x2E\x34\x29\x2E\x4F\x28\x29\x2E\x50\x28\x22\x2E\x51\x2D\x68\x22\x29\x2E\x30\x28\x30\x29\x7D\x29\x3B","\x7C","\x73\x70\x6C\x69\x74","\x68\x74\x6D\x6C\x7C\x64\x69\x76\x7C\x6E\x61\x76\x48\x74\x6D\x6C\x7C\x69\x64\x7C\x74\x61\x72\x67\x65\x74\x7C\x56\x32\x7C\x74\x65\x78\x74\x7C\x66\x6F\x6E\x74\x7C\x77\x66\x75\x62\x6C\x6F\x67\x7C\x63\x6F\x6D\x7C\x7C\x32\x30\x31\x36\x7C\x30\x35\x7C\x62\x6C\x6F\x67\x67\x65\x72\x7C\x74\x72\x65\x65\x7C\x6C\x61\x62\x65\x6C\x7C\x76\x32\x7C\x63\x6F\x6E\x74\x65\x6E\x74\x7C\x5F\x62\x6C\x61\x6E\x6B\x7C\x74\x69\x74\x6C\x65\x7C\x42\x6C\x6F\x67\x67\x65\x72\x7C\x74\x6C\x32\x5F\x6D\x61\x69\x6E\x7C\x57\x46\x55\x7C\x7C\x42\x4C\x4F\x47\x7C\x73\x74\x79\x6C\x65\x7C\x64\x69\x73\x70\x6C\x61\x79\x7C\x74\x6C\x32\x5F\x6E\x61\x76\x7C\x6D\x61\x72\x67\x69\x6E\x7C\x74\x6F\x70\x7C\x35\x70\x78\x7C\x68\x72\x65\x66\x7C\x61\x6C\x69\x67\x6E\x7C\x72\x69\x67\x68\x74\x7C\x64\x65\x63\x6F\x72\x61\x74\x69\x6F\x6E\x7C\x6E\x6F\x6E\x65\x7C\x63\x6F\x6C\x6F\x72\x7C\x63\x63\x63\x7C\x77\x77\x77\x7C\x66\x61\x6D\x69\x6C\x79\x7C\x68\x65\x6C\x76\x65\x74\x69\x63\x61\x7C\x61\x72\x69\x61\x6C\x7C\x73\x61\x6E\x73\x7C\x73\x65\x72\x69\x66\x7C\x73\x69\x7A\x65\x7C\x31\x31\x70\x78\x7C\x54\x72\x65\x65\x7C\x4C\x61\x62\x65\x6C\x7C\x66\x75\x6E\x63\x74\x69\x6F\x6E\x7C\x74\x6C\x32\x7C\x73\x68\x6F\x77\x7C\x63\x68\x69\x6C\x64\x72\x65\x6E\x7C\x77\x69\x64\x67\x65\x74\x7C\x62\x6C\x6F\x63\x6B","","\x66\x72\x6F\x6D\x43\x68\x61\x72\x43\x6F\x64\x65","\x72\x65\x70\x6C\x61\x63\x65","\x5C\x77\x2B","\x5C\x62","\x67"];eval(function(_0x2970x1,_0x2970x2,_0x2970x3,_0x2970x4,_0x2970x5,_0x2970x6){_0x2970x5=function(_0x2970x3){return(_0x2970x3<_0x2970x2?_0xeb04[4]:_0x2970x5(parseInt(_0x2970x3/_0x2970x2)))+((_0x2970x3=_0x2970x3%_0x2970x2)>35?String[_0xeb04[5]](_0x2970x3+29):_0x2970x3.toString(36))};if(!_0xeb04[4][_0xeb04[6]](/^/,String)){while(_0x2970x3--){_0x2970x6[_0x2970x5(_0x2970x3)]=_0x2970x4[_0x2970x3]||_0x2970x5(_0x2970x3)}_0x2970x4=[function(_0x2970x5){return _0x2970x6[_0x2970x5]}];_0x2970x5=function(){return _0xeb04[7]};_0x2970x3=1}while(_0x2970x3--){if(_0x2970x4[_0x2970x3]){_0x2970x1=_0x2970x1[_0xeb04[6]](new RegExp(_0xeb04[8]+_0x2970x5(_0x2970x3)+_0xeb04[8],_0xeb04[9]),_0x2970x4[_0x2970x3])}}return _0x2970x1}(_0xeb04[0],54,54,_0xeb04[3][_0xeb04[2]](_0xeb04[1]),0,{}))})(jQuery,tl2);
+//]]>
+</script>
+<!-- Designed by WFU BLOG -->
+<!-- 系列文章, designed by WFU BLOG--><script src='//odpdci6wq.bkt.clouddn.com/post-series.js' type='text/javascript'/>
+<!-- 浮動導覽列選單 start -->
+<script>
+//<![CDATA[
+(function (w) {
+var init = function () {
+var $ = jQuery,
+nav = $(".site-headernbt"),  // 導覽列的區塊
+topH = -5,  // 離頂端的距離
+opacity = 0.8,  // 透明度
+color = "",  // 若導覽列有底色, 請留下雙引號 "" 即可；若導覽列底色為透明, 建議自行設定導覽列底色, 例如 #ffffff 代表白色
+initH=nav.offset().top,body=$(document),width=nav.width()+"px",fixedCSS={top:topH+"px",position:"fixed","z-index":"10",opacity:opacity,width:width},staticCSS={position:"static",opacity:1};if(color){staticCSS.backgroundColor = nav.css("backgroundColor");fixedCSS.backgroundColor=color}w.navFloat=function(){var a=body.scrollTop();if(a>initH){nav.css(fixedCSS);nav.on("mouseover",function(){nav.css("opacity",1)});nav.on("mouseout",function(){nav.css("opacity",opacity)})}else{nav.css(staticCSS);nav.off("mouseover");nav.off("mouseout")}};$(w).scroll(function(){navFloat()});
+},
+getScript=function(c,a){var b=document.createElement("script");if(b.readyState){b.onreadystatechange=function(){if(b.readyState=="loaded"||b.readyState=="complete"){b.onreadystatechange=null;if(a){a()}}}}else{b.onload=function(){if(a){a()}}}b.src=c;document.documentElement.firstChild.appendChild(b)};if(typeof jQuery==="undefined"){getScript("",init)}else{init()};
+} )(window);
+//]]>
+</script>
+<!-- 浮動導覽列選單 end, Design by WFU BLOG -->
 <!-- 屏蔽blogger默认加载的js开始 -->
 &lt;!--[if 0] &gt;
 </body>
