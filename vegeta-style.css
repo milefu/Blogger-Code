@@ -15,13 +15,14 @@ body#layout .widget_searchnbt {display:none;}
 body#layout .drag-social-button {display:none;}
 /* Variable definitions
    ====================
+
 */
 
 /* Use this with templates/template-twocol.html */
 
 .section,.widget{margin:0;padding:0;}
 .section, .widget {margin:0px;padding:0px;line-height: 1.5;}
-.widget ul, .widget li {margin:0px;padding:0px;line-height: 1;}
+.widget ul, .widget li {margin:8px;padding:3px;line-height: 1;}
 
 /*--------------------------------------------------------------
 # Normalize
@@ -88,7 +89,7 @@ big{font-size:125%;}
 --------------------------------------------------------------*/
 html{box-sizing:border-box;}
 *,*:before,*:after{box-sizing:inherit;}
-body{background:#F5F5D5;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-feature-settings:"liga" on;}
+body{background:#F5F9FA;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-moz-font-feature-settings:"liga" on;}
 blockquote:before,blockquote:after,q:before,q:after{content:"";}
 blockquote,q{quotes:"" "";}
 hr{background-color:#ccc;border:0;height:1px;margin-bottom:1.5em;}
@@ -204,7 +205,7 @@ ul.sub-menu li a{margin-top:0;}
 ------------------------------------------------*/
 .site-contentnbt{width:1140px;margin:0 auto;margin-top:50px;}
 .content-areanbt{width:770px;float:left;}
-.widget-areanbt{background:#F5F5D5;float:right;width:342px;padding:20px;}
+.widget-areanbt{background:#F5F9FA;float:right;width:342px;padding:20px;}
 .detail-author-date a{text-decoration:none;}
 .detail-author-date{float:left;text-align:left;margin-top:7px;font-size:18px;width:400px;margin-left:10px;font-weight:300;}
 .image-author{width:40px;float:left;}
@@ -216,11 +217,11 @@ ul.sub-menu li a{margin-top:0;}
 .entry-title{font-size:26px;margin-bottom:12px;margin-top:0;line-height:1.1;font-family:'Roboto Slab';}
 .entry-title a{text-decoration:none;}
 .image-container{margin-bottom:10px;}
-.content-areanbt article{background:#F5F5D5;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
+.content-areanbt article{background:#ffffff;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
 .entry-header .entry-metanbt{margin-bottom:14px;}
-.entry-content blockquote{background-color:#C3F3F7;border-style:solid;border-radius:16px;border-color:#008000;padding-left:14px;padding-right:10px;font-style:normal;}
-.entry-content ol,.entry-content ul{margin:0;margin-bottom:20px;color:#7f7f7f;font-size:16px;}
-.entry-content ol li,.entry-content ul li{margin-bottom:10px;margin-left:1em;}
+.entry-content blockquote{background-color:#F5F5D5;border-style:none;border-radius:0px;padding-left:10px;padding-right:10px;font-style:normal;}
+.entry-content ol,.entry-content ul{margin:0;margin-bottom:20px;color:#012169;font-size:16px;}
+.entry-content ol li,.entry-content ul li{margin-bottom:10px;margin-left:0em;}
 .entry-footer .cat-links a,.entry-footer .tags-links a{background-color:#fff;border:1px solid #D2D2D2;padding:10px;padding-top:6px;padding-bottom:6px;border-radius:3px;color:#8B8B8B;line-height:43px;margin-right:5px;font-size:14px;}
 .entry-footer .cat-links a:hover,.entry-footer .tags-links a:hover{background-color:#efefef;}
 .cattitletag{font-weight:300;text-transform:uppercase;font-size:14px;color:#9E9E9E;margin-bottom:2px;}
@@ -313,7 +314,7 @@ h2.date-header{margin:10px 0;display:none;}
 .main .widget{margin:0 0 5px;padding:0 0 2px;}
 .main .Blog{border-bottom-width:0;}
 #header .description{}
-#comments{background:#F5F5D5;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
+#comments{background:#F5F9FA;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
 #comments h4{font-size:22px;margin-bottom:10px;}
 #comments ol{margin-left:0;}
 .deleted-comment{font-style:italic;color:gray;}
@@ -354,7 +355,7 @@ h2.date-header{margin:10px 0;display:none;}
 .reaction-buttons table,.reaction-buttons td{border:none !important;}
 .pbtthumbimg{float:left;margin:0 10px 5px 0;padding:4px;border:0 solid #eee;background:none;width:200px;height:auto;}
 
-html{font-family:'Georgia,serif';}
+html{font-family:'PingFang SC, Noto Sans CJK, Source Han Sans, Microsoft Yahei, source-han-sans-simplified-c, sans-serif;'}
 button,input[type="button"],input[type="reset"],input[type="submit"],.calltobtn{background:#57ad68;}
 .nav-links a:hover,.nav-links span{background:#57ad68 !important;border:1px solid #57ad68 !important;color:#fff !important;}
 a:link,a:visited{color:#0000CC;}
@@ -369,3 +370,29 @@ h3.widget-title{border-color: !important;}
 @media only screen and (max-width: 380px) {
 .pbtthumbimg{float:none;margin:0 0 10px 0;border:none;display:block;width:100%;height:auto;padding:0;}
 }
+
+/*####TOC Plugin V2.0 by MyBloggerTricks#### begin */
+.mbtTOC2{border:5px solid #f7f0b8;box-shadow:1px 1px 0 #EDE396;background-color:#FFFFE0;color:#707037;line-height:1.4em;margin:30px auto;padding:20px 30px 20px 10px; font-family:Oswald, arial;display: block;width: 70%;}.mbtTOC2 button{background:#FFFFE0; font-family:oswald, arial; font-size:22px;position:relative; outline:none;border:none; color:#707037;padding:0 0 0 15px;}.mbtTOC2 button a {color:#0080ff; padding:0px 2px;cursor:pointer;} 
+.mbtTOC2 button a:hover{ text-decoration:underline; } 
+.mbtTOC2 button span {font-size:15px; margin:0px 10px; }
+
+.mbtTOC2 li{margin:10px 0;  } 
+.mbtTOC2 li a {color:#0080ff; text-decoration:none; font-size:16px; text-transform:capitalize;} 
+.mbtTOC2 li a:hover {text-decoration: underline;}.mbtTOC2 li li {margin:4px 0px;} 
+.mbtTOC2 li li a{ color:#289728; font-size:15px;}
+.mbtTOC2 ol{counter-reset:section1;list-style:none}
+.mbtTOC2 ol ol{counter-reset:section2}
+.mbtTOC2 ol ol ol{counter-reset:section3}
+.mbtTOC2 ol ol ol ol{counter-reset:section4}
+.mbtTOC2 ol ol ol ol ol{counter-reset:section5}
+.mbtTOC2 li:before{content:counter(section1);counter-increment:section1;position:relative;padding:0 8px 0 0;font-size:16px}
+.mbtTOC2 li li:before{content:counter(section1) "." counter(section2);counter-increment:section2;font-size:14px}
+.mbtTOC2 li li li:before{content:counter(section1) "."counter(section2) "." counter(section3);counter-increment:section3}
+.mbtTOC2 li li li li:before{content:counter(section1) "."counter(section2) "."counter(section3) "." counter(section4);counter-increment:section4}
+.mbtTOC2 li li li li li:before{content:counter(section1) "."counter(section2) "."counter(section3) "." counter(section4)"." counter(section5);counter-increment:section5}
+/* 
+.point2 {list-style-type:lower-alpha} 
+.point3 {list-style-type:lower-roman} 
+.point4 {list-style-type:disc} 
+*/
+/*####TOC Plugin V2.0 by MyBloggerTricks#### end */
