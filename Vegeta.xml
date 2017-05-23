@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html b:version='2' class='v2' expr:dir='data:blog.languageDirection' lang='en-US' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-<head>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+&lt;!--<head>--&gt;&lt;head&gt;
 <meta charset='UTF-8'/>
 <meta content='width=device-width, initial-scale=1' name='viewport'/>
 <b:include data='blog' name='all-head-content'/>
-<link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'/>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,900' rel='stylesheet' type='text/css'/>
 <link href='//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet'/>
 <b:if cond='data:blog.pageType == &quot;index&quot;'>
 <title><data:blog.pageTitle/></title>
@@ -16,12 +16,9 @@
 <title>404 ~ 你找的页面被偷走了!</title>
 </b:if>
 </b:if>
-<!--[if lt IE 9]>
-    <script src="bower_components/html5shiv/dist/html5shiv.js"></script>
-<![endif]-->
-&lt;style type=&quot;text/css&quot;&gt;
-&lt;!-- <b:skin><![CDATA[]]></b:skin>
-<link href='http://odpdci6wq.bkt.clouddn.com/vegeta-style0002.css' rel='stylesheet' type='text/css'/>
+<!--[if lt IE 9]><script src="bower_components/html5shiv/dist/html5shiv.js"></script><![endif]-->
+&lt;!--<b:skin><![CDATA[]]></b:skin>
+<link href='http://odpdci6wq.bkt.clouddn.com/vegeta-style0004.css' rel='stylesheet' type='text/css'/>
 <script src='//cdn.bootcss.com/jquery/3.1.1/jquery.min.js' type='text/javascript'/>
 <script type='text/javascript'>
 //<![CDATA[
@@ -761,9 +758,7 @@ $(this).attr(&#39;target&#39;, &#39;_blank&#39;);
 </b:if>
 <b:if cond='data:blog.pageType == &quot;item&quot;'><div id='post-toc'><data:post.body/></div></b:if>
 <b:if cond='data:blog.pageType == &quot;static_page&quot;'><div id='post-toc'><data:post.body/></div></b:if>
-<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <!--该处文章尾部自带分享按钮-->
-</b:if>
 <b:if cond='data:blog.pageType != &quot;static_page&quot;'>
 <b:if cond='data:blog.pageType != &quot;item&quot;'>
 <div style='float:right;padding-right:0;margin-top:5px;'>
@@ -777,14 +772,6 @@ $(this).attr(&#39;target&#39;, &#39;_blank&#39;);
 <div class='post-iconspbt'>
 <span class='post-icons' style='padding-right:10px;'>
 <!-- email图标[ -->
-<b:if cond='data:post.emailPostUrl'>
-  <span class='item-action'>
-  <a expr:href='data:post.emailPostUrl' expr:title='data:top.emailPostMsg'>
-	  <img alt='' class='icon-action' height='13' src='https://img1.blogblog.com/img/icon18_email.gif' width='18'/>
-  </a>
-  </span>
-</b:if>
-<!-- email图标] -->
 </span>
  <div class='post-share-buttons goog-inline-block'>
 <b:if cond='data:post.sharePostUrl'>
@@ -1139,7 +1126,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </b:widget>
   <b:widget id='Label1' locked='false' title='文章分类' type='Label' version='1'>
     <b:widget-settings>
-      <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
+      <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
       <b:widget-setting name='display'>CLOUD</b:widget-setting>
       <b:widget-setting name='selectedLabelsList'/>
       <b:widget-setting name='showType'>ALL</b:widget-setting>
@@ -1283,11 +1270,5 @@ jQuery('.widget-areanbt .widget h2').wrapInner('<span/>');
 });
 //]]>
 </script>
-<!-- 系列文章, designed by WFU BLOG--><script src='//odpdci6wq.bkt.clouddn.com/post-series.js' type='text/javascript'/>
-<!-- 屏蔽blogger默认加载的js开始 -->
-&lt;!--[if 0] &gt;
-</body>
-&lt;![endif]--&gt;
-<!-- 屏蔽blogger默认加载的js结束 -->
-&lt;/body&gt;
+&lt;/body&gt;&lt;!--</body>--&gt;
 </html>
