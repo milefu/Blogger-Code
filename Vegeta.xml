@@ -102,7 +102,21 @@ p{margin-bottom:1.5em;}
 dfn,cite,em,i{font-style:italic;}
 blockquote{margin:1.5em;}
 address{margin:0 0 1.5em;}
-pre{background:#F5F2F0;font-family:"Courier 10 Pitch",Courier,monospace;font-size:16px;font-size:0.9375rem;line-height:1.3;margin-bottom:1.6em;max-width:100%;overflow:auto;padding:0.3em;white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word;}
+pre{
+	display:block;
+	margin-top:0;
+	margin-bottom:1rem;
+	font-size:100%;
+	background:#F5F2F0;
+	margin-bottom:1em;
+	max-width:100%;
+	overflow:auto;
+	white-space:pre-wrap;
+	white-space:-moz-pre-wrap;
+	white-space:-pre-wrap;
+	white-space:-o-pre-wrap;
+	word-wrap:break-word;
+}
 code,kbd,tt,var{background:#adff2f;font-family:Monaco,Consolas,"Andale Mono","DejaVu Sans Mono",monospace;font-size:16px;font-size:1rem;}
 abbr,acronym{border-bottom:1px dotted #666;cursor:help;}
 mark,ins{background:#fff9c0;text-decoration:none;}
@@ -243,7 +257,14 @@ ul.sub-menu li a{margin-top:0;}
 .image-container{margin-bottom:10px;}
 .content-areanbt article{background:#ffffff;padding:20px;border:1px solid #eee;margin-bottom:30px;box-shadow:0 1px 4px rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.09);border-radius:3px;}
 .entry-header .entry-metanbt{margin-bottom:14px;}
-.entry-content blockquote{background-color:#F5F5D5;border-style:none;border-radius:0px;padding-left:10px;padding-right:10px;font-style:normal;}
+.entry-content blockquote{
+	padding:0.75rem 1rem;
+	margin:0 0 1rem;
+	border-left:5px solid #e5e5e5;
+	background-color:#F5F5D5;
+	padding-left:10px;
+	padding-right:10px;
+}
 .entry-content ol,.entry-content ul{margin:0;margin-bottom:20px;color:#012169;font-size:16px;}
 .entry-content ol li{margin-bottom:-5px;margin-left:0em;}
 .entry-content ul li{margin-bottom:-5px;margin-left:1.5em;}
@@ -395,10 +416,18 @@ h3.widget-title{border-color: !important;}
 @media only screen and (max-width: 380px) {
 .pbtthumbimg{float:none;margin:0 0 10px 0;border:none;display:block;width:100%;height:auto;padding:0;}
 }
-
 /* Blogger 留言編號 开始 */
-.comment-thread > ol > li{counter-increment:count}
-.comment-thread > ol > li:before{content:"#" counter(count); float:right; margin-right:10px; padding:2px 5px; color:#5e7380; border:1px dashed #d2d2d2;}
+.comment-thread > ol > li {
+	counter-increment:count
+}
+.comment-thread > ol > li:before {
+	content:"#" counter(count);
+	float:right;
+	margin-right:10px;
+	padding:2px 5px;
+	color:#5e7380;
+	border:1px dashed #d2d2d2;
+}
 /*  Blogger 留言編號 结束 */
 /* 數字分頁開始 */
 #blog-pager{
@@ -515,7 +544,7 @@ $(this).attr(&#39;target&#39;, &#39;_blank&#39;);
     <b:widget-settings>
       <b:widget-setting name='displayUrl'/>
       <b:widget-setting name='displayHeight'>0</b:widget-setting>
-      <b:widget-setting name='sectionWidth'>600</b:widget-setting>
+      <b:widget-setting name='sectionWidth'>284</b:widget-setting>
       <b:widget-setting name='useImage'>false</b:widget-setting>
       <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
       <b:widget-setting name='imagePlacement'>BEHIND</b:widget-setting>
@@ -576,7 +605,7 @@ $(this).attr(&#39;target&#39;, &#39;_blank&#39;);
 <li><a expr:href='data:blog.homepageUrl'>主页</a></li>
 <li><a href='http://www.lawpai.com/p/blog-page.html'>关于律师</a>
 </li>
-<li><a href='http://www.lawpai.com/p/blog-page_10.html'>法律委托</a>
+<li><a href='http://www.lawpai.com/p/entrust.html'>法律委托</a>
 <ul class='sub-menu'>
 <li><a href='http://www.lawpai.com/2016/12/Costs-Calculator.html'>律师费与诉讼费</a></li>
 <li><a href='http://www.lawpai.com/2017/03/date-calculator.html'>日期计算器</a></li>
@@ -1517,6 +1546,53 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 </form>
 </div>
 <b:section class='sidebarwidgetsarea' id='sidebarwidgetsarea' preferred='yes'>
+  <b:widget id='Profile1' locked='false' title='我的简介' type='Profile'>
+    <b:widget-settings>
+      <b:widget-setting name='showaboutme'>true</b:widget-setting>
+      <b:widget-setting name='showlocation'>false</b:widget-setting>
+    </b:widget-settings>
+    <b:includable id='main'>
+    <b:if cond='data:title != &quot;&quot;'>
+      <h2><data:title/></h2>
+    </b:if>
+    <div class='widget-content'>
+    <b:if cond='data:team'> <!-- team blog profile -->
+      <ul>
+        <b:loop values='data:authors' var='i'>
+          <li><a class='profile-name-link g-profile' expr:href='data:i.userUrl' expr:style='&quot;background-image: url(&quot; + data:i.profileLogo + &quot;);&quot;'><data:i.display-name/></a></li>
+        </b:loop>
+      </ul>
+
+    <b:else/> <!-- normal blog profile -->
+
+      <b:if cond='data:photo.url != &quot;&quot;'>
+        <a expr:href='data:userUrl'><img class='profile-img' expr:alt='data:messages.myPhoto' expr:height='data:photo.height' expr:src='data:photo.url' expr:width='data:photo.width'/></a>
+      </b:if>
+
+      <dl class='profile-datablock'>
+        <dt class='profile-data'>
+          <a class='profile-name-link g-profile' expr:href='data:userUrl' expr:style='&quot;background-image: url(&quot; + data:profileLogo + &quot;);&quot;' rel='author'>
+            <data:displayname/>
+          </a>
+          <b:if cond='data:hasgoogleprofile'>
+            <br/>
+            <div class='g-follow' data-annotation='bubble' data-height='20' expr:data-href='data:userUrl'/>
+          </b:if>
+        </dt>
+
+        <b:if cond='data:showlocation'>
+          <dd class='profile-data'><data:location/></dd>
+        </b:if>
+
+        <b:if cond='data:aboutme != &quot;&quot;'><dd class='profile-textblock'><data:aboutme/></dd></b:if>
+      </dl>
+      <a class='profile-link' expr:href='data:userUrl' rel='author'><data:viewProfileMsg/></a>
+    </b:if>
+
+     <b:include name='quickedit'/>
+    </div>
+  </b:includable>
+  </b:widget>
   <b:widget id='Text2' locked='false' title='实用工具' type='Text' version='1'>
     <b:widget-settings>
       <b:widget-setting name='content'><![CDATA[<ul><li><a href="http://www.lawpai.com/2016/12/Costs-Calculator.html" target="_blank">律师费与诉讼费计算器</a></li>	<li><a href="http://www.lawpai.com/2017/03/date-calculator.html" target="_blank">日期计算器</a></li></ul>]]></b:widget-setting>
@@ -1536,7 +1612,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
     <b:widget-settings>
       <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
       <b:widget-setting name='display'>LIST</b:widget-setting>
-      <b:widget-setting name='selectedLabelsList'>Essay,Info,Law,Tech</b:widget-setting>
+      <b:widget-setting name='selectedLabelsList'>公告板,办案手记,技术随笔,时评社评,杂文随笔,法律实务,法律转载</b:widget-setting>
       <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
       <b:widget-setting name='showFreqNumbers'>true</b:widget-setting>
     </b:widget-settings>
@@ -1624,84 +1700,39 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
   </div>
 </b:includable>
   </b:widget>
-  <b:widget id='BlogArchive1' locked='false' title='文章归档' type='BlogArchive'>
-    <b:widget-settings>
-      <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
-      <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
-      <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
-      <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
-      <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
-      <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
-      <b:widget-setting name='chronological'>false</b:widget-setting>
-      <b:widget-setting name='showPosts'>true</b:widget-setting>
-      <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
-    </b:widget-settings>
-    <b:includable id='main'>
-  <b:if cond='data:title != &quot;&quot;'>
-    <h2><data:title/></h2>
-  </b:if>
-  <div class='widget-content'>
-  <div id='ArchiveList'>
-  <div expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-    <b:include cond='data:style == &quot;HIERARCHY&quot;' data='data' name='interval'/>
-    <b:include cond='data:style == &quot;FLAT&quot;' data='data' name='flat'/>
-    <b:include cond='data:style == &quot;MENU&quot;' data='data' name='menu'/>
-  </div>
-  </div>
-  <b:include name='quickedit'/>
-  </div>
-</b:includable>
-    <b:includable id='flat' var='data'>
-  <ul class='flat'>
-    <b:loop values='data:data' var='i'>
-      <li class='archivedate'>
-        <a expr:href='data:i.url'><data:i.name/></a> (<data:i.post-count/>)
-      </li>
-    </b:loop>
-  </ul>
-</b:includable>
-    <b:includable id='interval' var='intervalData'>
-  <b:loop values='data:intervalData' var='interval'>
-    <ul class='hierarchy'>
-      <li expr:class='&quot;archivedate &quot; + data:interval.expclass'>
-        <b:include cond='data:interval.toggleId' data='interval' name='toggle'/>
-        <a class='post-count-link' expr:href='data:interval.url'>
-          <data:interval.name/>
-        </a>
-        <span class='post-count' dir='ltr'>(<data:interval.post-count/>)</span>
-        <b:include cond='data:interval.data' data='interval.data' name='interval'/>
-        <b:include cond='data:interval.posts' data='interval.posts' name='posts'/>
-      </li>
-    </ul>
-  </b:loop>
-</b:includable>
-    <b:includable id='menu' var='data'>
-  <select expr:id='data:widget.instanceId + &quot;_ArchiveMenu&quot;'>
-    <option value=''><data:title/></option>
-    <b:loop values='data:data' var='i'>
-      <option expr:value='data:i.url'><data:i.name/> (<data:i.post-count/>)</option>
-    </b:loop>
-  </select>
-</b:includable>
-    <b:includable id='posts' var='posts'>
-  <ul class='posts'>
-    <b:loop values='data:posts' var='post'>
-      <li><a expr:href='data:post.url'><data:post.title/></a></li>
-    </b:loop>
-  </ul>
-</b:includable>
-    <b:includable id='toggle' var='interval'>
-  <a class='toggle' href='javascript:void(0)'>
-    <span expr:class='&quot;zippy&quot; + (data:interval.expclass == &quot;expanded&quot; ? &quot; toggle-open&quot; : &quot;&quot;)'>
-      <b:if cond='data:interval.expclass == &quot;expanded&quot;'>
-        &#9660;&#160;
-      <b:elseif cond='data:blog.languageDirection == &quot;rtl&quot;'/>
-        &#9668;&#160;
-      <b:else/>
-        &#9658;&#160;
-      </b:if>
-    </span>
-  </a>
+  <b:widget id='Navbar1' locked='false' title='Navbar' type='Navbar'>
+    <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener(&#39;load&#39;,
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent(&#39;onload&#39;, function(){ object[attribute] = val; });
+      }
+    }
+  &lt;/script&gt;
+&lt;div id=&quot;navbar-iframe-container&quot;&gt;&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://apis.google.com/js/plusone.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+      gapi.load(&quot;gapi.iframes:gapi.iframes.style.bubble&quot;, function() {
+        if (gapi.iframes &amp;&amp; gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: &#39;https://draft.blogger.com/navbar.g?targetBlogID\x3d1619856673789713032\x26blogName\x3d%E6%B3%95%E5%BE%8B%E6%B4%BE+\x26publishMode\x3dPUBLISH_MODE_HOSTED\x26navbarType\x3dDISABLED\x26layoutType\x3dLAYOUTS\x26searchRoot\x3dhttp://www.lawpai.com/search\x26blogLocale\x3dzh_CN\x26v\x3d2\x26homepageUrl\x3dhttp://www.lawpai.com/\x26vt\x3d-7150271357856636604&#39;,
+              where: document.getElementById(&quot;navbar-iframe-container&quot;),
+              id: &quot;navbar-iframe&quot;
+          });
+        }
+      });
+    &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
+(function() {
+var script = document.createElement(&#39;script&#39;);
+script.type = &#39;text/javascript&#39;;
+script.src = &#39;//pagead2.googlesyndication.com/pagead/js/google_top_exp.js&#39;;
+var head = document.getElementsByTagName(&#39;head&#39;)[0];
+if (head) {
+head.appendChild(script);
+}})();
+&lt;/script&gt;
 </b:includable>
   </b:widget>
 </b:section>
@@ -1718,7 +1749,7 @@ var randomRelatedIndex,showRelatedPost;(function(n,m,k){var d={widgetTitle:"<h4>
 <div class='containernbt'>
 <div class='copyright-textnbt'>
 <!-- Do not edit or remove credits without our permission: newbloggerthemes.com -->
-Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://newbloggerthemes.com/vegeta-blogger-template/demo/' target='_blank'>Vegeta blogger</a> | 本博客开源: <a href='https://github.com/fuyuanlin/Blogger-Vegeta-Theme' target='_blank' title='Blogger-Vegeta-Theme-Github'>Vegeta github</a>
+Copyright &#169; <script type='text/javascript'>var creditsyear = new Date();document.write(creditsyear.getFullYear());</script> <a expr:href='data:blog.homepageUrl'><data:blog.title/></a> | Powered by <a href='http://www.blogger.com/'>Blogger</a><br/>Design by <a href='http://newbloggerthemes.com/vegeta-blogger-template/demo/' target='_blank'>Vegeta blogger</a> | 本博客开源: <a href='https://github.com/demlawyer/Blogger-Vegeta-Theme' target='_blank' title='Blogger-Vegeta-Theme-Github'>Vegeta github</a>
 </div>
 <div class='back-topnbt'>
 <a href='#' id='back-to-topnbt' title='Back to top'>Back To Top <i class='fa fa-arrow-circle-o-up'/></a>
