@@ -76,4 +76,4 @@ else
 this.txt.nodeValue = str;    
 }
 }
-);
+)
